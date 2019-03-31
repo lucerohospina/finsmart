@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+/* VARIABLES */
+:root {
+  --electric-blue: #3E0CEF;
+  --true-blue: #0068DC;
+  --gray-1: #979797;
+  --gray-2: #CACACA;
+  --turquoise-fins: #33FDCF;
+  --aqua-fins: #00FDFF;
+}
+
+/* FONTS SIZES */
+.fs-36 { font-size: 2.25rem; }
+.fs-24 { font-size: 1.5rem; }
+.fs-22 { font-size: 1.375rem }
+.fs-20 { font-size: 1.25rem; }
+.fs-18 { font-size: 1.125rem; }
+.fs-16 { font-size: 1rem; }
+.fs-14 { font-size: 0.875rem; }
+.fs-13 { font-size: 0.8125rem; }
+.fs-12 { font-size: 0.75rem; }
+.fs-11 { font-size: 0.6875rem; }
+.fs-10 { font-size: 0.625rem; }
+.fs-8 { font-size: 0.5rem; }
+/* *** */
+
+.bg-electric-blue {
+  background-color: var(--electric-blue);
+}
+
+.bg-true-blue {
+  background-color: var(--true-blue);
+}
+
+.bg-gray-1 {
+  background-color: var(--gray-1);
+}
+
+.min100vh {
+  min-height: 100vh;
+}
+
+.login-cont {
+  height: 100vh;
+}
+
+.bg-login-image {
+  min-height: 30vh;
+  background-image: url('./assets/img/login.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.btn-pers {
+  height: 40px;
+  width: 160px;
+}
+
+.btn-pers-2 {
+  border-radius: 18px;
+  height: 40px;
+  width: 140px;
+}
+
+.btn-pers-3 {
+  height: 40px;
+  width: 204px;
+}
+
