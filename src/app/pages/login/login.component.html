@@ -1,29 +1,31 @@
-<div class="container-fluid login-cont">
-  <div class="row">
-    <div class="col-12 col-md-6 bg-login-image"></div>
-    <div class="col-12 col-md-6">
-      <figure class=" text-center mb-4">
-        <img src="./assets/img/logo-finsmart.svg" alt="logo" class="img-fluid logo" width="250">
-      </figure>
-      <form (ngSubmit)="loginUser($event)" #userLogin="ngForm">
-        <div class="text-center mb-4">
-          <button type="button" class="btn bg-true-blue text-white btn-pers mr-2">Cliente</button>
-          <button type="button" class="btn bg-gray-1 text-white btn-pers">Inversionista</button>
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="RUC">
-        </div>
-        <div class="form-group">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-          <small id="emailHelp" class="form-text fs-12 mt-2" style="color: #0076E1;" >¿Olvidaste tu contraseña?</small>
-        </div>
-        <div class="text-center">
-          <button type="submit" class="btn bg-true-blue text-white btn-pers-2">Ingresar</button>
-        </div>
-      </form>
-      <div class="text-center mt-5">
-        <button type="submit" class="btn bg-electric-blue text-white btn-pers-3">Crear una cuenta</button>
+<div class="login-container">
+  <div class="col-12 col-md-6">
+    <figure class="display-desktop text-center mb-4">
+      <img src="./assets/img/login.png" alt="logo" class="login-image">
+    </figure>
+  </div>
+  <div class="col-12 col-md-6">
+    <figure class=" text-center mb-4">
+      <img src="./assets/img/logo-finsmart.svg" alt="logo" class="img-fluid logo" width="250">
+    </figure>
+    <form (ngSubmit)="loginUser($event)" #userLogin="ngForm">
+      <div class="text-center mb-4 d-flex login-buttons">
+        <button type="button" class="main-button-radius bg-true-blue">Cliente</button>
+        <button type="button" class="main-button-radius bg-gray-1">Inversionista</button>
       </div>
+      <div class="form-group">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="RUC">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+        <small id="emailHelp" class="form-text fs-12 mt-2" style="color: #0076E1;" >¿Olvidaste tu contraseña?</small>
+      </div>
+      <div class="text-center d-flex justify-content-center">
+        <button type="submit" class="bg-true-blue main-button-radius" style="border-radius: 20px">Ingresar</button>
+      </div>
+    </form>
+    <div class="text-center mt-5 d-flex justify-content-center">
+      <button type="submit" class="bg-electric-blue main-button-radius">Crear una cuenta</button>
     </div>
   </div>
 </div>

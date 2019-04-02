@@ -1,0 +1,41 @@
+@import 'colors';
+@import 'buttons';
+
+.display-desktop {
+  display: none;
+  @media (min-width: 768px) {
+    display: inline-block
+  }
+}
+
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 32px);
+  margin: 20px auto;
+  @media (min-width: 1280px) {
+    align-items: center;
+    flex-direction: row;
+    height: 100vh;
+  }
+  .login-image {
+    width: 95%;
+  }
+  form {
+    width: 350px;
+    margin: 0 auto;
+  }
+}
+
+.login-buttons {
+  button:nth-child(1) {
+    margin-right: 12px;
+  }
+  & button {
+    width: calc(calc(100% - 12px) /2)
+  }
+  @media (min-width: 1280px){
+    justify-content: space-between;
+  }
+}
