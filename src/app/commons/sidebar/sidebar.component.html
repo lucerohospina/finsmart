@@ -1,23 +1,21 @@
-<nav class="navbar-expand-sm bg-white border-right">
-    <a class="navbar-brand">
-    
-    </a>
-    <ul class="">
-      <li class="title-sidebar" routerLink="/oportunidades" routerLinkActive='activated'>
-        <div class="activated-line position-absolute" *ngIf="_router.url === '/oportunidades'"></div>
-        Oportunidades
-      </li>
-      <li class="title-sidebar" routerLink="/inversiones" routerLinkActive='activated'>
-        <div class="activated-line position-absolute" *ngIf="_router.url === '/inversiones'"></div>
-        Mis inversiones
-      </li>
-      <li class="title-sidebar" routerLink="/cuentas-bancarias" routerLinkActive='activated'>
-        <div class="activated-line position-absolute" *ngIf="_router.url === '/cuentas-bancarias'"></div>
-        Cuentas bancarias
-      </li>
-      <li class="title-sidebar" routerLink="/depositar-dinero" routerLinkActive='activated'>
-        <div class="activated-line position-absolute" *ngIf="_router.url === '/depositar-dinero'"></div>
-        Depositar dinero
-      </li>
-    </ul>
-  </nav>
+<nav class="bg-white main-sidebar">
+  <a class="navbar-brand">
+    <figure class="text-center mb-4" style="width: 100px">
+      <img src="./assets/img/logo-clean.svg" alt="logo" class="img-fluid logo" width="250">
+    </figure>
+  </a>
+  <ul class="">
+    <li class="title-sidebar" routerLink="/oportunidades" routerLinkActive='activated'>
+      Oportunidades
+    </li>
+    <li class="title-sidebar" routerLink="/inversiones" routerLinkActive='activated'>
+      Mis inversiones
+    </li>
+    <li class="title-sidebar" routerLink="/cuentas-bancarias" routerLinkActive='activated'>
+      Cuentas bancarias
+    </li>
+    <li class="title-sidebar" routerLink="/depositar-dinero" routerLinkActive='activated'>
+      Depositar dinero
+    </li>
+  </ul>
+</nav>

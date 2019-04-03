@@ -8,23 +8,36 @@
   }
 }
 
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+/*--------- LOGIN -----------*/
 
 .login-container {
   display: flex;
   flex-direction: column;
   width: calc(100% - 32px);
   margin: 20px auto;
+  form {
+    width: 250px;
+    margin: 0 auto;
+  }
+  @media (min-width: 768px) {
+
+  }
   @media (min-width: 1280px) {
     align-items: center;
     flex-direction: row;
     height: 100vh;
-  }
-  .login-image {
-    width: 95%;
-  }
-  form {
-    width: 350px;
-    margin: 0 auto;
+    form {
+      width: 350px;
+      margin: 0 auto;
+    }
+    .login-image {
+      width: 95%;
+    }
   }
 }
 
@@ -38,4 +51,45 @@
   @media (min-width: 1280px){
     justify-content: space-between;
   }
+}
+
+/*--------- SIDEBAR -----------*/
+
+.main-sidebar {
+  padding: 45px 55px;
+  height: 100vh;
+  position: fixed;
+  width: 315px;
+}
+
+.title-sidebar {
+  padding: 16px 0;
+  margin: 15px 0;
+  position: relative;
+  &.activated {
+    color: $true-blue;
+    &:before {
+      content: '';
+      height: 66px;
+      width: 7px;
+      background-color: #3E0CEF;
+      left: -55px;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+
+/*-----------PAGES-----------*/
+
+.main-container {
+  width: calc(100% - 315px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
