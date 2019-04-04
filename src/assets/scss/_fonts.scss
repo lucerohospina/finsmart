@@ -8,6 +8,19 @@
   src: url('/assets/fonts/Chivo-Light.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: "Chivo-Bold";
+  src: url('/assets/fonts/Chivo-Bold.ttf') format('truetype');
+}
+
 .light {
   font-family: "Chivo-Light";
+}
+
+.regular {
+  font-family: "Chivo";
+}
+
+.bold {
+  font-family: "Chivo-Bold";
 }

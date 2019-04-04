@@ -1,6 +1,6 @@
 <div class="main-container">
   <div class="d-flex">
-    <button type="submit" class="bg-electric-blue main-button-radius">Agregar cuenta</button>
+    <button type="submit" class="bg-true-blue main-button-radius">Agregar cuenta</button>
   </div>
   <div class="main-table">
     <table mdbTable>
@@ -16,14 +16,20 @@
       </thead>
       <tbody>
         <tr mdbTableCol *ngFor="let el of bankAccounts">
-          <td>{{el.bank}}</td>
-          <td>{{el.ammount}}</td>
-          <td>{{el.cci}}</td>
-          <td>{{el.currency}}</td>
-          <td>{{el.date}}</td>
-          <td>Icons</td>
+          <td class="light">{{el.bank}}</td>
+          <td class="light">{{el.ammount}}</td>
+          <td class="light">{{el.cci}}</td>
+          <td class="light">{{el.currency}}</td>
+          <td class="light">{{el.date}}</td>
+          <td class="light"></td>
         </tr>
       </tbody>
     </table>
   </div>
+  <div class="mt-5">
+    <figure class="text-center mb-4" style="width: 30px">
+      <img src="./assets/img/plus.svg" alt="logo" class="img-fluid logo">
+    </figure>
+  </div>
+
 </div>

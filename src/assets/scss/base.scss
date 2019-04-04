@@ -36,12 +36,16 @@ ul {
     align-items: center;
     flex-direction: row;
     height: 100vh;
+    justify-content: space-evenly;
+    .img-container {
+      width: 40%;
+      .login-image {
+        width: 95%;
+      }
+    }
     form {
       width: 350px;
       margin: 0 auto;
-    }
-    .login-image {
-      width: 95%;
     }
   }
 }
@@ -60,6 +64,14 @@ ul {
 
 /*--------- SIDEBAR -----------*/
 
+.name-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-sidebar {
   padding: 45px 0 45px 55px;
   height: 100vh;
@@ -71,13 +83,14 @@ ul {
   padding: 16px 0;
   margin: 15px 0;
   position: relative;
+  cursor: pointer;
   &.activated {
     color: $true-blue;
     &:before {
       content: '';
       height: 66px;
       width: 7px;
-      background-color: #3E0CEF;
+      background-color: $electric-blue;
       left: -55px;
       position: absolute;
       transform: translateY(-50%);
@@ -92,6 +105,11 @@ ul {
 
 /*-----------PAGES-----------*/
 
+#content {
+  margin: 30px 0 35px 280px;
+  padding-right: 50px;
+}
+
 .main-container {
   width: 100%;
   display: flex;
@@ -103,8 +121,15 @@ ul {
 
 .main-table {
   margin-top: 50px;
+  table {
+    width: 1024px;
+  }
   tr {
     border-bottom: 1px solid $gray-1;
+  }
+  tr.no-border {
+    border-bottom: unset;
+    border-left: 4px solid $electric-blue;
   }
   th, td {
     padding: 24px 24px;
@@ -115,7 +140,7 @@ ul {
 /*------------OPORTUNITIES--------------*/
 
 .oportunitie-box {
-  padding: 30px;
+  padding: 15px;
   border: 2px solid $true-blue;
   border-radius: 10px;
   .single-box {
@@ -148,14 +173,62 @@ ul {
 }
 
 .oportunitie-table {
+  .box-wrapped {
+    cursor: pointer;
+    &:hover{
+      border-left: 4px solid $electric-blue;
+    }
+  }
   .expanded-row {
     display: table-row;
     cursor: pointer;
     padding: 30px 25px;
     width: 100%;
-    div {
+    border-left: 4px solid $electric-blue;
+    p {
+      text-align: left;
+      margin-bottom: 0;
+    }
+    .expanded-p {
+      font-size: 14px;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+    .invert-box {
       display: flex;
-      width: 100%;
+      flex-direction: column;
+      p.invert{
+        font-size: 15px;
+        width: 130px;
+        margin-right: 15px;
+        span {
+          font-size: 12px;
+        }
+      }
+      input {
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid #cacaca;
+        padding: 10px;
+        outline: none;
+      }
+      p.italic {
+        color: #0076E1;
+        font-family: Chivo-Light;
+        font-size: 12px;
+        font-style: italic;
+        text-align: right;
+      }
+    }
+    .checkbox-wrapper {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      margin: 0 auto;
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
     }
     &.hidden {
       display: none;
