@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Chivo";
+  src: url('/assets/fonts/Chivo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Chivo-Light";
+  src: url('/assets/fonts/Chivo-Light.ttf') format('truetype');
+}
+
+.light {
+  font-family: "Chivo-Light";
+}

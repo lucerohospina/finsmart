@@ -1,5 +1,10 @@
 @import 'colors';
 @import 'buttons';
+@import 'fonts';
+
+body, html {
+  font-family: "Chivo";
+}
 
 .display-desktop {
   display: none;
@@ -56,10 +61,10 @@ ul {
 /*--------- SIDEBAR -----------*/
 
 .main-sidebar {
-  padding: 45px 55px;
+  padding: 45px 0 45px 55px;
   height: 100vh;
   position: fixed;
-  width: 315px;
+  width: 280px;
 }
 
 .title-sidebar {
@@ -88,8 +93,72 @@ ul {
 /*-----------PAGES-----------*/
 
 .main-container {
-  width: calc(100% - 315px);
+  width: 100%;
   display: flex;
+  min-height: 100vh;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
+}
+
+.main-table {
+  margin-top: 50px;
+  tr {
+    border-bottom: 1px solid $gray-1;
+  }
+  th, td {
+    padding: 24px 24px;
+    text-align: center;
+  }
+}
+
+/*------------OPORTUNITIES--------------*/
+
+.oportunitie-box {
+  padding: 30px;
+  border: 2px solid $true-blue;
+  border-radius: 10px;
+  .single-box {
+    position: relative;
+    max-width: 218px;
+    padding: 16px;
+    p {
+      margin: 0;
+    }
+    &:nth-child(1) {
+      &:after {
+        display: none;
+      }
+    }
+    &:nth-child(2) {
+      margin-right: 40px;
+      margin-left: 40px;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: 66px;
+      background: $gray-1;
+      transform: translateY(-50%);
+      left: -20px;
+      top: 50%;
+    }
+  }
+}
+
+.oportunitie-table {
+  .expanded-row {
+    display: table-row;
+    cursor: pointer;
+    padding: 30px 25px;
+    width: 100%;
+    div {
+      display: flex;
+      width: 100%;
+    }
+    &.hidden {
+      display: none;
+    }
+  }
 }

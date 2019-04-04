@@ -1,3 +1,48 @@
-<p>
-  opportunities works!
-</p>
+<div class="main-container">
+  <div class="d-flex oportunitie-box">
+    <div class="single-box">
+      <p>
+        Oportunidades para invertir
+      </p>
+    </div>
+    <div class="single-box">
+      <p>TEA promedio</p>
+    </div>
+    <div class="single-box">
+      <p>de duración promedio de retorno de la inversión</p>
+    </div>
+  </div>
+  <div class="main-table oportunitie-table">
+    <table mdbTable>
+      <thead>
+        <tr>
+          <th scope="col">Pagador</th>
+          <th scope="col">Monto Total</th>
+          <th scope="col-2">Monto Disponible</th>
+          <th scope="col">TEA</th>
+          <th scope="col">ROI (monto)</th>
+          <th scope="col">Fecha de cobro (días)</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let el of oportunities" (click)="showRow(el)">
+        <tr mdbTableCol>
+          <td>{{el.name}}</td>
+          <td>{{el.ammount}}</td>
+          <td>{{el.availableAmmount}}</td>
+          <td>{{el.tea}}</td>
+          <td>{{el.roi}}</td>
+          <td>{{el.date}}</td>
+        </tr>
+        <tr mdbTableCol class="expanded-row" [ngClass]="{'hidden': !selectedRow || selectedRow.name !== el.name}">
+          <td colspan="6">
+            <div>
+              <div class="d-flex">
+                <p class="light">{{el.child.text}}</p>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

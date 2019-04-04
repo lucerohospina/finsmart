@@ -1,7 +1,29 @@
 <div class="main-container">
-  <div>
-    <div class="d-flex">
-      <button type="submit" class="bg-electric-blue main-button-radius">Agregar una cuenta</button>
-    </div>
+  <div class="d-flex">
+    <button type="submit" class="bg-electric-blue main-button-radius">Agregar cuenta</button>
+  </div>
+  <div class="main-table">
+    <table mdbTable>
+      <thead>
+        <tr>
+          <th scope="col">Banco</th>
+          <th scope="col">Cuenta</th>
+          <th scope="col">CCI</th>
+          <th scope="col">Moneda</th>
+          <th scope="col">Fecha de Registro</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr mdbTableCol *ngFor="let el of bankAccounts">
+          <td>{{el.bank}}</td>
+          <td>{{el.ammount}}</td>
+          <td>{{el.cci}}</td>
+          <td>{{el.currency}}</td>
+          <td>{{el.date}}</td>
+          <td>Icons</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
