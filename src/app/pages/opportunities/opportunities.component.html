@@ -14,7 +14,7 @@
       <p><span class="bold">{{singleBenefits.days}}</span>dias de duración promedio de retorno de la inversión</p>
     </div>
   </div>
-  <div class="main-table oportunitie-table">
+  <div class="main-table oportunitie-table w-90">
     <table mdbTable>
       <thead>
         <tr>
@@ -27,13 +27,20 @@
         </tr>
       </thead>
       <tbody *ngFor="let el of oportunities">
-        <tr class="box-wrapped" mdbTableCol (click)="showRow(el)" [ngClass]="{'no-border': selectedRow && selectedRow.name === el.name}">
+        <tr class="box-wrapped" mdbTableCol (click)="showRow(el)"
+          [ngClass]="{'no-border': selectedRow && selectedRow.name === el.name}">
           <td class="light">{{el.name}}</td>
           <td class="light">{{el.ammount}}</td>
           <td class="light">{{el.availableAmmount}}</td>
           <td class="light">{{el.tea}}</td>
-          <td><p class="light mb-0">{{el.roi}}</p><p class="light">{{el.roiAmmount}}</p></td>
-          <td><p class="light mb-0">{{el.date}}</p><p class="light">en {{el.days}} dias</p></td>
+          <td>
+            <p class="light mb-0">{{el.roi}}</p>
+            <p class="light">{{el.roiAmmount}}</p>
+          </td>
+          <td>
+            <p class="light mb-0">{{el.date}}</p>
+            <p class="light">en {{el.days}} dias</p>
+          </td>
         </tr>
         <tr mdbTableCol class="expanded-row" [ngClass]="{'hidden': !selectedRow || selectedRow.name !== el.name}">
           <td colspan="6" class="pb-5">
@@ -49,7 +56,7 @@
                       Quiero invertir:
                       <span>(usar decimales)</span>
                     </p>
-                    <input placeholder="Monto"/>
+                    <input placeholder="Monto" />
                   </div>
                   <p class="italic">{{el.child.ammount}}</p>
                   <h4 class="light text-right mt-1 mb-0">ROI: <span class="regular">{{el.child.roi}}</span></h4>

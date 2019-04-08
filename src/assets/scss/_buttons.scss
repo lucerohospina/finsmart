@@ -9,6 +9,7 @@
   border-style: unset;
   cursor: pointer;
   &:focus {
+    box-shadow: none;
     outline: none;
   }
 }
@@ -16,4 +17,17 @@
 .main-button-radius {
   @extend .main-button;
   border-radius: 7px;
+}
+
+.investment-button {
+  @extend .main-button-radius;
+  background-color: #9D9D9D;
+  padding: 10px;
+  width: 240px;
+  p {
+    color: white;
+  }
+  &:hover {
+    background-color: $true-blue;
+  }
 }
