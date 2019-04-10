@@ -11,16 +11,19 @@ import { SidebarComponent } from './commons/sidebar/sidebar.component';
 import { InvestmentsComponent } from './pages/investments/investments.component';
 import { BankAccountsComponent } from './pages/bank-accounts/bank-accounts.component';
 import { DepositsComponent } from './pages/deposits/deposits.component';
+import { NavbarMobileComponent } from './commons/navbar-mobile/navbar-mobile.component';
 
-const routes : Routes = [
-  { path : 'login', component : LoginComponent },
-  {path: '', component: BaseComponent, children : [
-    {path : '', redirectTo: '/oportunidades', pathMatch: 'full'},
-    {path: 'oportunidades', component: OpportunitiesComponent},
-    {path: 'inversiones', component: InvestmentsComponent},
-    {path: 'cuentas-bancarias', component: BankAccountsComponent},
-    {path: 'depositar-dinero', component: DepositsComponent}
-  ]},
+const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  {
+    path: '', component: BaseComponent, children: [
+      { path: '', redirectTo: '/oportunidades', pathMatch: 'full' },
+      { path: 'oportunidades', component: OpportunitiesComponent },
+      { path: 'inversiones', component: InvestmentsComponent },
+      { path: 'cuentas-bancarias', component: BankAccountsComponent },
+      { path: 'depositar-dinero', component: DepositsComponent }
+    ]
+  },
 ]
 
 @NgModule({
@@ -32,7 +35,8 @@ const routes : Routes = [
     SidebarComponent,
     InvestmentsComponent,
     BankAccountsComponent,
-    DepositsComponent
+    DepositsComponent,
+    NavbarMobileComponent
   ],
   imports: [
     BrowserModule,

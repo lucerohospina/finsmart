@@ -76,10 +76,14 @@ ul {
 }
 
 .main-sidebar {
-  padding: 45px 0 45px 55px;
-  height: 100vh;
-  position: fixed;
-  width: 280px;
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+    padding: 45px 0 45px 55px;
+    height: 100vh;
+    position: fixed;
+    width: 280px;
+  }
 }
 
 .title-sidebar {
