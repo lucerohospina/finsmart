@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +8,7 @@ import { Router } from '@angular/router'
 })
 export class SidebarComponent implements OnInit {
 
-  name = 'Alexander'
+  name = 'Alexander';
 
   constructor(public _router: Router) { }
 
