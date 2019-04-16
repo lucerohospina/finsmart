@@ -1,10 +1,57 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
+@Component({
+  template: `
+    <div class="modal-header border-bottom-0">
+      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p><b>Confirmación</b></p>
+      <p>Estás a punto de invertir en la factura <b>E001.55</b> de la empresa <b>DACVAL S.A.C</b> por un importe de <b>PEN XXXX.xx</b>
+      con una ganancia proyectada de <b>XX.X</b> para el <b>miércoles, 3 de julio de 2019</b></p>
+      <p>Has aceptado los términos y condiciones de cesión de uso de plataforma Web y el contrato de
+       condiciones especiales aplicables al inversionista, relacionado al mandato y sin representación.</p>
+      <p><button class="btn btn-lg btn-outline-primary" (click)="open()">Invertir</button></p>
+    </div>
+  `
+})
+export class NgbdModal1Content {
+  constructor(private modalService: NgbModal, public activeModal: NgbActiveModal) { }
+
+  open() {
+    this.modalService.open(NgbdModal2Content, {
+      size: 'lg'
+    });
+  }
+}
+
+@Component({
+  template: `
+    <div class="modal-header border-bottom-0">
+      <button type="button" class="close" aria-label="Close" (click)="close()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body text-center">
+      <p><b>¡Inversión exitosa!</b></p>
+    </div>
+  `
+})
+export class NgbdModal2Content {
+  constructor(private modalService: NgbModal, public activeModal: NgbActiveModal) { }
+  close() {
+    this.modalService.dismissAll();
+  }
+}
 @Component({
   selector: 'app-opportunities',
   templateUrl: './opportunities.component.html',
-  styleUrls: ['./opportunities.component.css']
+  styleUrls: ['./opportunities.component.css'],
 })
+
 export class OpportunitiesComponent implements OnInit {
 
   selectedRow: any = undefined;
@@ -70,9 +117,17 @@ export class OpportunitiesComponent implements OnInit {
         days: '45',
       }
     }
-  ]
+  ];
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
+
+  open() {
+    this.modalService.open(NgbdModal1Content);
+  }
+
+  dismissAll() {
+    this.modalService.dismissAll();
+  }
 
   ngOnInit() {
   }
