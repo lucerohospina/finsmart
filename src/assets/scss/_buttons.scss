@@ -19,6 +19,11 @@
   border-radius: 7px;
 }
 
+.main-button-radius-20 {
+  @extend .main-button;
+  border-radius: 20px;
+}
+
 .investment-button {
   @extend .main-button-radius;
   background-color: #9D9D9D;
@@ -32,4 +37,52 @@
     text-decoration: none;
     color: white;
   }
+}
+
+.deposit-button {
+  @extend .main-button-radius;
+  background-color: $true-blue;
+  padding: 10px;
+  width: 160px;
+  p {
+    color: white;
+  }
+  &:hover {
+    background-color: $true-blue;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.deposit-button-gray {
+  @extend .main-button-radius;
+  background-color: #9D9D9D;
+  padding: 10px;
+  width: 160px;
+  p {
+    color: white;
+  }
+  &:hover {
+    background-color: $true-blue;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.deposit-button-voucher {
+  @extend .main-button-radius;
+  background-color: $electric-blue;
+  padding: 10px;
+  width: 203px;
+  p {
+    color: white;
+  }
+}
+
+.deposit-button-confirm {
+  @extend .main-button-radius-20;
+  background-color: $true-blue;
+  padding: 10px;
+  width: 150px;
+  color: white;
 }

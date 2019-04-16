@@ -13,6 +13,10 @@ body, html {
   }
 }
 
+.w-40 {
+  width: 40%
+}
+
 ul {
   padding: 0;
   list-style-type: none;
@@ -160,6 +164,7 @@ a.active {
   div.investment-box:nth-child(1) p.light{
     font-style: italic;
   }
+  
 }
 
 .main-table {
@@ -294,5 +299,30 @@ a.active {
     border-radius: 10px;
     width: 200px;
     padding: 10px;
+  }
+}
+
+/*------------DEPOSIT--------------*/
+
+.deposit-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  .single-box{
+    border: 1.5px solid $electric-blue;
+    border-radius: 10px;
+    width: 200px;
+    padding: 10px;
+  }
+}
+
+form {
+  div.form-group:nth-child(1) {
+    label {
+      height: 32px;
+      width: 142px;
+    }
   }
 }
