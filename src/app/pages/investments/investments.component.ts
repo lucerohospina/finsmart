@@ -36,21 +36,21 @@ export class InvestmentsComponent implements OnInit {
       id: 'actual-tab',
       href: '#actual',
       name: 'actual',
-      class: 'nav-link active'
+      class: 'investment-button active mx-2'
     },
     {
       text: 'Historial de Inversión',
       id: 'inver-tab',
       href: '#inver',
       name: 'inver',
-      class: 'nav-link'
+      class: 'investment-button mx-2'
     },
     {
       text: 'Historial de Transferencias',
       id: 'transf-tab',
       href: '#transf',
       name: 'transf',
-      class: 'nav-link'
+      class: 'investment-button mx-2'
     }
   ];
 
