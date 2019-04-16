@@ -69,7 +69,7 @@
   }
 }
 
-.deposit-button-voucher {
+.deposit-button-voucher, .personal-button-psw {
   @extend .main-button-radius;
   background-color: $electric-blue;
   padding: 10px;
@@ -79,10 +79,20 @@
   }
 }
 
-.deposit-button-confirm {
+.deposit-button-confirm, .personal-button-changes {
   @extend .main-button-radius-20;
   background-color: $true-blue;
   padding: 10px;
   width: 150px;
   color: white;
+}
+
+.personal-button-psw, .personal-button-changes {
+  display: initial;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.personal-button-changes {
+  width: 203px;
 }

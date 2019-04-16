@@ -287,6 +287,18 @@ a.active {
 
 // oportunitis modal
 
+.modal-dialog {
+  position: relative;
+    width: 65%;
+    height: 65%;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+}
+
+.light-blue-backdrop {
+  background-color: #5cb3fd;
+}
 
 /*------------INVESTMENTS--------------*/
 
@@ -325,6 +337,34 @@ form {
     label {
       height: 32px;
       width: 142px;
+    }
+  }
+}
+
+/*------------PERSONAL-INFO--------------*/
+
+div.personal-info-container {
+  width: 700px;
+  div:nth-child(1) {
+    p {
+      font-size: 20px;
+      margin-bottom: 0px;
+      line-height: 16px;
+    }
+    span {
+    color: #CBCBCB;
+    font-size: 11px;
+    }
+  }
+
+  div.form-container {
+    .form-group {
+      label {
+        margin-bottom: 4px;
+      }
+      .form-control {
+        border: 1px solid #979797;
+      }
     }
   }
 }

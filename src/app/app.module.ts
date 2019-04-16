@@ -7,9 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
-import {
-  NgbdModal1Content,
-  NgbdModal2Content, OpportunitiesComponent } from './pages/opportunities/opportunities.component';
+import {NgbdModal1Content, NgbdModal2Content, OpportunitiesComponent } from './pages/opportunities/opportunities.component';
 import { BaseComponent } from './commons/base/base.component';
 import { SidebarComponent } from './commons/sidebar/sidebar.component';
 import { InvestmentsComponent } from './pages/investments/investments.component';

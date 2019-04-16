@@ -22,9 +22,7 @@ export class NgbdModal1Content {
   constructor(private modalService: NgbModal, public activeModal: NgbActiveModal) { }
 
   open() {
-    this.modalService.open(NgbdModal2Content, {
-      size: 'lg'
-    });
+    this.modalService.open(NgbdModal2Content);
   }
 }
 
