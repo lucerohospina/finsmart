@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?9rfhrm');
-  src:  url('fonts/icomoon.eot?9rfhrm#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?9rfhrm') format('truetype'),
-    url('fonts/icomoon.woff?9rfhrm') format('woff'),
-    url('fonts/icomoon.svg?9rfhrm#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?hkwq84');
+  src:  url('fonts/icomoon.eot?hkwq84#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?hkwq84') format('truetype'),
+    url('fonts/icomoon.woff?hkwq84') format('woff'),
+    url('fonts/icomoon.svg?hkwq84#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,21 +24,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-cuentas:before {
+.icon-cerrar-sesion:before {
   content: "\e900";
 }
-.icon-depositar:before {
+.icon-cuentas:before {
   content: "\e901";
 }
-.icon-inver1:before {
+.icon-depositar:before {
   content: "\e902";
 }
-.icon-opot:before {
+.icon-invertir:before {
   content: "\e903";
 }
-.icon-plus:before {
+.icon-oportunidades:before {
   content: "\e904";
 }
-.icon-inver:before {
+.icon-plus:before {
   content: "\e905";
+}
+.icon-usuario:before {
+  content: "\e906";
 }
