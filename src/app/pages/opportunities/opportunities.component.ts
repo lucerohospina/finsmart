@@ -22,7 +22,7 @@ export class NgbdModal1Content {
   constructor(private modalService: NgbModal, public activeModal: NgbActiveModal) { }
 
   open() {
-    this.modalService.open(NgbdModal2Content, { centered: true });
+    this.modalService.open(NgbdModal2Content, { centered: true, backdropClass: 'light-backdrop2' });
   }
 }
 
@@ -33,7 +33,7 @@ export class NgbdModal1Content {
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div class="modal-body text-center">
+    <div class="modal-body second-modal text-center">
       <p><b>¡Inversión exitosa!</b></p>
     </div>
   `
@@ -120,7 +120,7 @@ export class OpportunitiesComponent implements OnInit {
   constructor(private modalService: NgbModal) { }
 
   open() {
-    this.modalService.open(NgbdModal1Content, { centered: true });
+    this.modalService.open(NgbdModal1Content, { centered: true, backdropClass: 'light-backdrop1'});
   }
 
   dismissAll() {

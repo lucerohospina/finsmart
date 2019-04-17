@@ -314,11 +314,21 @@ a.active {
           font-size: 16px;
         }
       }
+      .second-modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50vh;
+      }
     }
 }
 
-.light-blue-backdrop {
-  background-color: #5cb3fd;
+.light-backdrop1 {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.light-backdrop2 {
+  background-color: rgba(255,255,255,0.4);
 }
 
 /*------------INVESTMENTS--------------*/
