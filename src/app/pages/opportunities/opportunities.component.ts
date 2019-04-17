@@ -14,7 +14,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
       con una ganancia proyectada de <b>XX.X</b> para el <b>miércoles, 3 de julio de 2019</b></p>
       <p>Has aceptado los términos y condiciones de cesión de uso de plataforma Web y el contrato de
        condiciones especiales aplicables al inversionista, relacionado al mandato y sin representación.</p>
-      <p><button class="btn btn-lg btn-outline-primary" (click)="open()">Invertir</button></p>
+      <p><button class="d-inline bg-electric-blue main-button-radius" (click)="open()">Invertir</button></p>
     </div>
   `
 })
@@ -22,7 +22,7 @@ export class NgbdModal1Content {
   constructor(private modalService: NgbModal, public activeModal: NgbActiveModal) { }
 
   open() {
-    this.modalService.open(NgbdModal2Content);
+    this.modalService.open(NgbdModal2Content, { centered: true });
   }
 }
 
@@ -120,7 +120,7 @@ export class OpportunitiesComponent implements OnInit {
   constructor(private modalService: NgbModal) { }
 
   open() {
-    this.modalService.open(NgbdModal1Content);
+    this.modalService.open(NgbdModal1Content, { centered: true });
   }
 
   dismissAll() {

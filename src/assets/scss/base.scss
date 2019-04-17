@@ -289,11 +289,32 @@ a.active {
 
 .modal-dialog {
   position: relative;
-    width: 65%;
+    max-width: 55%;
     height: 65%;
     pointer-events: none;
     display: flex;
     justify-content: center;
+    .modal-content {
+      height: 75%;
+      .modal-body {
+        p {
+          text-align: center;
+          margin-bottom: 30px;
+          margin-left: 55px;
+          margin-right: 55px;
+        }
+        p:nth-child(1){
+          font-size: 24px;
+        }
+        p:nth-child(2){
+          font-size: 20px;
+        }
+        p:nth-child(3){
+          color: #626262;
+          font-size: 16px;
+        }
+      }
+    }
 }
 
 .light-blue-backdrop {
