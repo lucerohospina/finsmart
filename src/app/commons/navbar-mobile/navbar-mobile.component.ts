@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navbar-mobile',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarMobileComponent implements OnInit {
 
-  constructor() { }
+  name = 'Alexander';
+
+  constructor() {
+  }
+
+  public show;
+
+  @Input() tabMobileChild;
+  @Input() function: any;
+  @Output() tabMobileChildChange = new EventEmitter<boolean>();
+
 
   ngOnInit() {
+  }
+
+  toggle() {
+    this.tabMobileChildChange.emit(!this.tabMobileChild);
   }
 
 }

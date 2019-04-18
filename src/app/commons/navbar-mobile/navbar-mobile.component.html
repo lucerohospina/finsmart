@@ -1,3 +1,39 @@
-<p>
-  navbar-mobile works!
-</p>
+<div class="nav-mobile">
+  <span (click)="toggle()" class="icon-menu1"></span>
+  <span>Bienvenido, {{name}}</span>
+  <img alt="logo" class="img-fluid logo" src="./assets/img/logo-clean.svg" width="50">
+</div>
+<ng-container *ngIf="tabMobileChild">
+  <div class="tab-mobile">
+    <span (click)="toggle()" class="icon-menu1"></span>
+    <nav class="">
+      <ul class="">
+        <li class="title-sidebar d-flex align-items-end" (click)="toggle()" routerLink="/oportunidades" routerLinkActive='activated'>
+          <span class="icon-oportunidades"></span>
+          <p class="mb-0 ml-2">Oportunidades</p>
+        </li>
+        <li class="title-sidebar d-flex align-items-end" (click)="toggle()" routerLink="/inversiones" routerLinkActive='activated'>
+          <span class="icon-invertir"></span>
+          <p class="mb-0 ml-2">Mis inversiones</p>
+        </li>
+        <li class="title-sidebar d-flex align-items-end" (click)="toggle()" routerLink="/cuentas-bancarias" routerLinkActive='activated'>
+          <span class="icon-cuentas"></span>
+          <p class="mb-0 ml-2">Cuentas bancarias</p>
+        </li>
+        <li class="title-sidebar d-flex align-items-end" (click)="toggle()" routerLink="/depositar-dinero" routerLinkActive='activated'>
+          <span class="icon-depositar"></span>
+          <p class="mb-0 ml-2">Depositar o retirar</p>
+        </li>
+        <hr />
+        <li class="title-sidebar d-flex align-items-end" (click)="toggle()" routerLink="/datos-personales" routerLinkActive='activated'>
+          <span class="icon-usuario"></span>
+          <p class="mb-0 ml-2">Mis datos personales</p>
+        </li>
+        <li class="title-sidebar d-flex align-items-end" routerLink="/login" routerLinkActive='activated'>
+          <span class="icon-cerrar-sesion"></span>
+          <p class="mb-0 ml-2">Cerrar sesión</p>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</ng-container>

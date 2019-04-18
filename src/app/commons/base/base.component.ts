@@ -8,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class BaseComponent implements OnInit {
 
   constructor() { }
+  tabMobile = false;
 
   ngOnInit() {
+    this.tabMobile = false;
   }
 
+  changeBoolMobile = function () {
+    this.tabMobile = !this.tabMobile;
+  };
 }
