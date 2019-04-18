@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   template: `
@@ -48,6 +48,7 @@ export class NgbdModal2Content {
   selector: 'app-opportunities',
   templateUrl: './opportunities.component.html',
   styleUrls: ['./opportunities.component.css'],
+  providers: [NgbCarouselConfig]
 })
 
 export class OpportunitiesComponent implements OnInit {
@@ -59,6 +60,22 @@ export class OpportunitiesComponent implements OnInit {
     tea: '25%',
     days: 35,
   };
+
+  singleBenefitsArr = [
+    {
+      ammount: 'S/ 45,452.32',
+      tea: '25%',
+      days: 35,
+    }, {
+      ammount: 'S/ 55,452.32',
+      tea: '25%',
+      days: 35,
+    }
+  ];
+
+  showNavigationArrows = true;
+  showNavigationIndicators = false;
+
 
   oportunities = [
     {
@@ -117,7 +134,16 @@ export class OpportunitiesComponent implements OnInit {
     }
   ];
 
-  constructor(private modalService: NgbModal) { }
+  arra = ['hola', 'chau', 'bye'];
+
+  constructor(private modalService: NgbModal, config: NgbCarouselConfig) {
+    config.showNavigationArrows = true;
+    config.interval = 0;
+    config.showNavigationIndicators = false;
+    config.wrap = true;
+    config.keyboard = false;
+    config.pauseOnHover = true;
+  }
 
   open() {
     this.modalService.open(NgbdModal1Content, { centered: true, backdropClass: 'light-backdrop1'});

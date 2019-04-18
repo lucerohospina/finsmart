@@ -76,3 +76,17 @@
     </table>
   </div>
 </div>
+<div class="main-container-mobile" >
+ <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-top"
+   [showNavigationIndicators]="showNavigationIndicators" >
+   <ng-template ngbSlide *ngFor="let el of singleBenefitsArr">
+     <div class="carousel-caption">
+       <p>Oportunidades para invertir</p>
+       <p>{{el.ammount}}</p>
+     </div>
+   </ng-template>
+ </ngb-carousel>
+ <div>
+   restante
+ </div>
+</div>

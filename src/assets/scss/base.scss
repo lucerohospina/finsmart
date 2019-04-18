@@ -91,26 +91,6 @@ a.active {
   margin-left: 30px;
 }
 
-// // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
-//   ...
-// }
-
-// // Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) {
-//   ...
-// }
-
-// // Large devices (desktops, 992px and up)
-// @media (min-width: 992px) {
-//   ...
-// }
-
-// // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) {
-//   ...
-// }
-
 .nav-mobile {
   display: flex;
   align-items: center;
@@ -227,23 +207,73 @@ a.active {
 /*-----------PAGES-----------*/
 
 #content {
+  margin: 0;
+  @media (min-width: 768px) {
   margin: 30px 0 35px 280px;
+  }
 }
 
 .main-container {
-  width: 100%;
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  div.investment-box:nth-child(1) {
-    opacity: 0.5;
+  display: none;
+  @media (min-width: 768px) {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    div.investment-box:nth-child(1) {
+      opacity: 0.5;
+    }
+
+    div.investment-box:nth-child(1) p.light {
+      font-style: italic;
+    }
   }
-  div.investment-box:nth-child(1) p.light{
-    font-style: italic;
+}
+
+.main-container-mobile {
+  display: block;
+  @media (min-width: 768px) {
+  display: none;
   }
-  
+}
+
+.carousel-content {
+  .carousel-caption {
+    position: initial;
+    right: 15%;
+    bottom: 20px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #4A4A4A;
+    text-align: center;
+  }
+}
+
+.carousel-top {
+  .carousel-control-prev-icon {
+    background-image: url('./assets/img/back.png')
+  }
+
+  .carousel-control-next-icon {
+    background-image: url('./assets/img/next.png')
+  }
+  &:focus {
+    outline: 0px;
+  }
+  margin: 20px;
+  border: 2px solid #0068DC;
+  border-radius: 10px;
+  p:nth-child(1) {
+    font-size: 15px;
+  }
+  p:nth-child(2) {
+    font-size: 25px;
+  }
 }
 
 .main-table {
@@ -364,7 +394,7 @@ a.active {
   }
 }
 
-// oportunitis modal
+// OPORTUNITIES modal
 
 .modal-dialog {
   position: relative;
@@ -409,6 +439,9 @@ a.active {
 .light-backdrop2 {
   background-color: rgba(255,255,255,0.4);
 }
+
+// OPORTUNITIES mobile
+
 
 /*------------INVESTMENTS--------------*/
 
