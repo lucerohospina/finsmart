@@ -14,7 +14,7 @@
       <tbody>
         <tr mdbTableCol *ngFor="let el of bankAccounts">
           <td class="light">{{el.bank}}</td>
-          <td class="light">{{el.ammount}}</td>
+          <td class="light">{{el.account}}</td>
           <td class="light">{{el.cci}}</td>
           <td class="light">{{el.currency}}</td>
           <td class="light">{{el.date}}</td>
@@ -29,4 +29,55 @@
     </figure>
   </div>
 
+</div>
+<div class="main-container-mobile bank-accounts-mobile" >
+ <div>
+  <div class='mt-3'> 
+    <p class="title d-inline mb-0">Cuentas bancarias</p>
+  </div>
+   <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-bottom"
+     [showNavigationIndicators]="showNavigationIndicators" >
+     <ng-template ngbSlide *ngFor="let item of bankAccounts">
+       <div class="carousel-caption">
+         <div class="d-flex justify-content-around first-part">
+            <p>Banco</p> <p>{{item.bank}}</p>
+         </div>
+         <hr class='mx-4 mt-0 mb-4'>
+         <div class="d-flex justify-content-around second-part">
+            <div>
+              <p>Moneda</p>
+              <p>{{item.currency}}</p>
+            </div>
+            <div>
+              <p>Fecha de registro</p>
+              <p>{{item.date}}</p>
+            </div>
+         </div>
+         <hr class='mx-5 mt-0'>
+         <div class="d-flex justify-content-around second-part pt-2">
+            <div>
+              <p>Cuenta</p>
+              <p>{{item.account}}</p>
+            </div>
+         </div>
+         <hr class='mx-5 mt-0'>
+         <div class="d-flex justify-content-around second-part pt-2">
+            <div>
+              <p>CCI</p>
+              <p>{{item.cci}}</p>
+            </div>
+         </div>
+         <div class="d-flex justify-content-center second-part pt-2">
+            <span class='icon-menu1'></span>
+            <span class='icon-menu1'></span>
+         </div>
+       </div>
+     </ng-template>
+   </ngb-carousel>
+   <div _ngcontent-c4="" class="mt-2 d-flex justify-content-center">
+      <figure _ngcontent-c4="" style="width: 26px">
+        <img _ngcontent-c4="" alt="logo" class="img-fluid logo" src="./assets/img/plus.svg">
+      </figure>
+    </div>
+ </div>
 </div>
