@@ -96,8 +96,8 @@ a.active {
   width: 100%;
   height: 70px;
   padding: 20px 25px;
-  .icon-menu1 {
-    font-size: 22px;
+  .icon-menu {
+    font-size: 16px;
     &:hover {
       cursor: pointer;
     }
@@ -251,6 +251,10 @@ a.active {
   p.title {
     font-size: 20px;
   }
+  span.icon-down-arrow {
+    font-size: 20px;
+    margin-right: 3px;
+  }
 }
 
 .carousel-content {
@@ -394,6 +398,9 @@ a.active {
     padding: 16px;
     p {
       margin: 0;
+    }
+    p.bold, span.bold {
+      font-size: 25px;
     }
     &:nth-child(1) {
       &:after {
@@ -539,7 +546,14 @@ a.active {
         font-weight: 600;
       }
     }
+    span.icon-edit, span.icon-garbage {
+      font-size: 23px;
+      margin: 0px 10px;
+    }
   }
+  span.icon-plus {
+      font-size: 23px;
+    }
 }
 
 /*------------INVESTMENTS--------------*/

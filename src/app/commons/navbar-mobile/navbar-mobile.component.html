@@ -1,19 +1,19 @@
 <div class="nav-mobile">
-  <span (click)="toggle()" class="icon-menu1"></span>
+  <span (click)="toggle()" class="icon-menu"></span>
   <span>Bienvenido, {{name}}</span>
   <img alt="logo" class="img-fluid logo" src="./assets/img/logo-clean.svg" width="50">
 </div>
 <ng-container *ngIf="tabMobileChild">
   <div class="tab-mobile">
     <nav class="">
-      <span (click)="toggle()" class="icon-menu1 close-tab"></span>
+      <span (click)="toggle()" class="icon-cancel close-tab"></span>
       <ul class="">
         <li class="title-sidebar d-flex align-items-end" (click)="toggle()" routerLink="/oportunidades" routerLinkActive='activated'>
-          <span class="icon-oportunidades"></span>
+          <span class="icon-opot"></span>
           <p class="mb-0 ml-2">Oportunidades</p>
         </li>
         <li class="title-sidebar d-flex align-items-end" (click)="toggle()" routerLink="/inversiones" routerLinkActive='activated'>
-          <span class="icon-invertir"></span>
+          <span class="icon-inver"></span>
           <p class="mb-0 ml-2">Mis inversiones</p>
         </li>
         <li class="title-sidebar d-flex align-items-end" (click)="toggle()" routerLink="/cuentas-bancarias" routerLinkActive='activated'>
@@ -26,11 +26,11 @@
         </li>
         <hr />
         <li class="title-sidebar d-flex align-items-end" (click)="toggle()" routerLink="/datos-personales" routerLinkActive='activated'>
-          <span class="icon-usuario"></span>
+          <span class="icon-Shape"></span>
           <p class="mb-0 ml-2">Mis datos personales</p>
         </li>
         <li class="title-sidebar d-flex align-items-end" routerLink="/login" routerLinkActive='activated'>
-          <span class="icon-cerrar-sesion"></span>
+          <span class="icon-Shape1"></span>
           <p class="mb-0 ml-2">Cerrar sesión</p>
         </li>
       </ul>
