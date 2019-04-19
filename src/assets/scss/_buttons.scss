@@ -67,6 +67,10 @@
     text-decoration: none;
     color: white;
   }
+  margin-top: 20px;
+  @media (min-width: 768px) {
+    margin-top: 0px;
+  }
 }
 
 .deposit-button-voucher, .personal-button-psw {
@@ -76,6 +80,13 @@
   width: 203px;
   p {
     color: white;
+  }
+}
+
+.deposit-button-voucher, .deposit-button-confirm {
+  margin-top: 20px;
+  @media (min-width: 768px) {
+    margin-top: 25px;
   }
 }
 
