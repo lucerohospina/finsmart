@@ -79,14 +79,67 @@
 <div class="main-container-mobile" >
  <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-top"
    [showNavigationIndicators]="showNavigationIndicators" >
-   <ng-template ngbSlide *ngFor="let el of singleBenefitsArr">
+   <ng-template ngbSlide>
      <div class="carousel-caption">
        <p>Oportunidades para invertir</p>
-       <p>{{el.ammount}}</p>
+       <p>S/ 45,452.32</p>
+     </div>
+   </ng-template>
+   <ng-template ngbSlide>
+     <div class="carousel-caption">
+       <p>TEA promedio</p>
+       <p>25.4 %</p>
+     </div>
+   </ng-template>
+   <ng-template ngbSlide>
+     <div class="carousel-caption">
+       <p class="px-5"><span>35 días</span> de duración promedio de retorno sobre la 
+      inversión</p>
      </div>
    </ng-template>
  </ngb-carousel>
  <div>
-   restante
+   <p class="title">Oportunidades</p>
+   <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-bottom"
+     [showNavigationIndicators]="showNavigationIndicators" >
+     <ng-template ngbSlide *ngFor="let item of oportunities">
+       <div class="carousel-caption">
+         <div class="d-flex justify-content-around first-part">
+            <p>Pagador</p> <p>{{item.name}}</p>
+         </div>
+         <hr class='mx-4 mt-0 mb-4'>
+         <div class="d-flex justify-content-around second-part pt-2">
+            <div>
+              <p>Monto total</p>
+              <p>{{item.ammount}}</p>
+            </div>
+            <div>
+              <p>Monto disponible</p>
+              <p>{{item.availableAmmount}}</p>
+            </div>
+         </div>
+         <hr class='mx-5 mt-0'>
+         <div class="d-flex justify-content-around third-part mr-4 ml-3">
+            <div>
+              <p>TEA</p>
+              <p>{{item.tea}}</p>
+            </div>
+            <hr class='mx-2'>
+            <div>
+              <p class='mx-2'>ROI (monto)</p>
+              <p class='mb-0'>{{item.roi}}</p>
+              <p>{{item.roiAmmount}}</p>
+            </div>
+            <hr class='mx-2'>
+            <div>
+                <p class='mx-3'>Fecha de cobro (días)</p>
+                <p class='mb-0'>{{item.date}}</p>
+                <p>({{item.days}}) días</p>
+            </div>
+         </div>
+         
+       </div>
+     </ng-template>
+   </ngb-carousel>
  </div>
 </div>

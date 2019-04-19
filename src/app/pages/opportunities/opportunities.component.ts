@@ -134,7 +134,6 @@ export class OpportunitiesComponent implements OnInit {
     }
   ];
 
-  arra = ['hola', 'chau', 'bye'];
 
   constructor(private modalService: NgbModal, config: NgbCarouselConfig) {
     config.showNavigationArrows = true;
