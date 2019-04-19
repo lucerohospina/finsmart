@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-investments',
@@ -162,7 +163,17 @@ export class InvestmentsComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  showNavigationArrows = true;
+  showNavigationIndicators = false;
+  
+  constructor(config: NgbCarouselConfig) {
+    config.showNavigationArrows = true;
+    config.interval = 0;
+    config.showNavigationIndicators = false;
+    config.wrap = true;
+    config.keyboard = false;
+    config.pauseOnHover = true;
+  }
 
   ngOnInit() {
   }
