@@ -3,19 +3,22 @@ import { NgbActiveModal, NgbModal, NgbCarouselConfig} from '@ng-bootstrap/ng-boo
 
 @Component({
   template: `
+  <div id='modal-opportunities'>
     <div class="modal-header border-bottom-0">
-      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
     </div>
     <div class="modal-body">
       <p><b>Confirmación</b></p>
       <p>Estás a punto de invertir en la factura <b>E001.55</b> de la empresa <b>DACVAL S.A.C</b> por un importe de <b>PEN XXXX.xx</b>
       con una ganancia proyectada de <b>XX.X</b> para el <b>miércoles, 3 de julio de 2019</b></p>
       <p>Has aceptado los términos y condiciones de cesión de uso de plataforma Web y el contrato de
-       condiciones especiales aplicables al inversionista, relacionado al mandato y sin representación.</p>
+      condiciones especiales aplicables al inversionista, relacionado al mandato y sin representación.</p>
       <p><button class="d-inline bg-electric-blue main-button-radius" (click)="open()">Invertir</button></p>
     </div>
+  </div>
+    
   `
 })
 export class NgbdModal1Content {
@@ -28,6 +31,7 @@ export class NgbdModal1Content {
 
 @Component({
   template: `
+  <div class='modal-opportunities'>
     <div class="modal-header border-bottom-0">
       <button type="button" class="close" aria-label="Close" (click)="close()">
         <span aria-hidden="true">&times;</span>
@@ -36,6 +40,8 @@ export class NgbdModal1Content {
     <div class="modal-body second-modal text-center">
       <p><b>¡Inversión exitosa!</b></p>
     </div>
+  </div>
+    
   `
 })
 export class NgbdModal2Content {
