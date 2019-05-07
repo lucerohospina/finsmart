@@ -5,7 +5,7 @@
         <span>Si deseas modificar tu nombre o e-mail, por favor contacta con nosostros.</span>
     </div>
     <div class="text-center">
-      <button class="personal-button-psw">Modificar contraseña</button>
+      <button (click)="open(content)" class="personal-button-psw">Modificar contraseña</button>
     </div>
     <div class="form-container container">
       <div class="row">
@@ -54,3 +54,18 @@
       </div>
   </div>
 </div>
+
+
+<ng-template #content let-modal>
+    <div class="modal-body">
+      <h2>Recuperar contraseña</h2>
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+            <input id="password" class="form-control" placeholder="Email" name="dp">
+          </div>
+        </div>
+      </form>
+      <button type="submit" class="bg-electric-blue main-button-radius">Recuperar contraseña</button>
+    </div>
+  </ng-template>
