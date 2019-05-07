@@ -30,6 +30,7 @@ export class PersonalInfoComponent implements OnInit {
   }
   openSnackBar( action: string) {
     this.snackBar.open('Los cambios fueron guardados', action, {
+      panelClass: 'custom-class',
       duration: 2000,
     });
   }

@@ -33,6 +33,20 @@ a.active {
   margin: 0 auto;
 }
 
+.hideTable {
+  display: none;
+}
+
+
+.custom-class {
+  position: absolute;
+  top: 0;
+  background: #18d21d;
+  width: 200px;
+  color: white;
+  right: 0;
+}
+
 /*--------- LOGIN -----------*/
 
 .login-container {
@@ -409,6 +423,25 @@ a.active {
 
 /*------------OPORTUNITIES--------------*/
 
+.mat-expansion-panel-header {
+  min-height: 98px !important;
+  padding: 0 !important;
+}
+
+.mat-expansion-panel-body {
+  padding: 0 !important;
+}
+
+.mat-content {
+  tbody {
+    width: 100%;
+  }
+}
+
+.mat-expansion-indicator {
+  display: none!important;
+}
+
 .oportunitie-box {
   padding: 15px;
   border: 2px solid $true-blue;
@@ -448,6 +481,8 @@ a.active {
 .oportunitie-table {
   .box-wrapped {
     cursor: pointer;
+    display: table;
+    width: 100%;
     &:hover{
       border-left: 4px solid $electric-blue;
     }

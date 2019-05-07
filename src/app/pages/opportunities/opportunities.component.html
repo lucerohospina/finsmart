@@ -28,58 +28,62 @@
         </tr>
       </thead>
       <tbody *ngFor="let el of oportunities">
-      <mat-expansion-panel>
 
-        <mat-expansion-panel-header>
-        <tr class="box-wrapped" mdbTableCol (click)="showRow(el)"
-          [ngClass]="{'no-border': selectedRow && selectedRow.name === el.name}">
-          <td class="light">{{el.name}}</td>
-          <td class="light">{{el.ammount}}</td>
-          <td class="light">{{el.availableAmmount}}</td>
-          <td class="light">{{el.tea}}</td>
-          <td>
-            <p class="light mb-0">{{el.roi}}</p>
-            <p class="light">{{el.roiAmmount}}</p>
-          </td>
-          <td>
-            <p class="light mb-0">{{el.date}}</p>
-            <p class="light">en {{el.days}} dias</p>
-          </td>
-        </tr>
-      </mat-expansion-panel-header>
-      <ng-template matExpansionPanelContent>
-        <tr mdbTableCol class="expanded-row" [ngClass]="{'hidden': !selectedRow || selectedRow.name !== el.name}">
-          <td colspan="6" class="pb-5">
-            <div class="d-flex align-items-center flex-column">
-              <div class="d-flex justify-content-between">
-                <div class="d-flex w-50 flex-column">
-                  <p class="light expanded-p">{{el.child.text}}</p>
-                  <p>{{el.child.mainText}}</p>
-                </div>
-                <div class="invert-box">
-                  <div class="d-flex">
-                    <p class="light invert">
-                      Quiero invertir:
-                      <span>(usar decimales)</span>
-                    </p>
-                    <input placeholder="Monto" />
+          <td colspan="12" style="padding: 0 !important">
+            <mat-expansion-panel scope="col-12">
+    
+              <mat-expansion-panel-header>
+                <tr class="box-wrapped" (click)="showRow(el)"
+                  [ngClass]="{'no-border': selectedRow && selectedRow.name === el.name}">
+                  <td class="light">{{el.name}}</td>
+                  <td class="light">{{el.ammount}}</td>
+                  <td class="light">{{el.availableAmmount}}</td>
+                  <td class="light">{{el.tea}}</td>
+                  <td>
+                    <p class="light mb-0">{{el.roi}}</p>
+                    <p class="light">{{el.roiAmmount}}</p>
+                  </td>
+                  <td>
+                    <p class="light mb-0">{{el.date}}</p>
+                    <p class="light">en {{el.days}} dias</p>
+                  </td>
+                </tr>
+            </mat-expansion-panel-header>
+            <ng-template matExpansionPanelContent>
+              <tr style="width: 100%" mdbTableCol class="expanded-row">
+                <td colspan="6" class="pb-5">
+                  <div class="d-flex align-items-center flex-column">
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex w-50 flex-column">
+                        <p class="light expanded-p">{{el.child.text}}</p>
+                        <p>{{el.child.mainText}}</p>
+                      </div>
+                      <div class="invert-box">
+                        <div class="d-flex">
+                          <p class="light invert">
+                            Quiero invertir:
+                            <span>(usar decimales)</span>
+                          </p>
+                          <input placeholder="Monto" />
+                        </div>
+                        <p class="italic">{{el.child.ammount}}</p>
+                        <h4 class="light text-right mt-1 mb-0">ROI: <span class="regular">{{el.child.roi}}</span></h4>
+                        <p class="text-right light fs-14">en {{el.child.days}} dias</p>
+                      </div>
+                    </div>
+                    <div class="checkbox-wrapper my-3">
+                      <input type="checkbox" />
+                      <a href="" class="ml-1 light fs-14">Estoy de acuerdo con los términos y condiciones</a>
+                    </div>
+                    <button type="submit" class="bg-electric-blue main-button-radius"
+                      (click)="open()">Invertir</button>
                   </div>
-                  <p class="italic">{{el.child.ammount}}</p>
-                  <h4 class="light text-right mt-1 mb-0">ROI: <span class="regular">{{el.child.roi}}</span></h4>
-                  <p class="text-right light fs-14">en {{el.child.days}} dias</p>
-                </div>
-              </div>
-              <div class="checkbox-wrapper my-3">
-                <input type="checkbox" />
-                <a href="" class="ml-1 light fs-14">Estoy de acuerdo con los términos y condiciones</a>
-              </div>
-              <button type="submit" class="bg-electric-blue main-button-radius"
-                (click)="open()">Invertir</button>
-            </div>
+                </td>
+              </tr>
+              </ng-template>
+            </mat-expansion-panel>
           </td>
-        </tr>
-        </ng-template>
-      </mat-expansion-panel>
+        
       </tbody>
     </table>
   </div>

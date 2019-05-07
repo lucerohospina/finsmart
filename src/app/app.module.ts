@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import {MatTableModule} from '@angular/material/table';
 
 
 import { AppComponent } from './app.component';
@@ -58,6 +58,7 @@ const routes: Routes = [
     NgbModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
+    MatTableModule,
     MatExpansionModule
   ],
   providers: [],
