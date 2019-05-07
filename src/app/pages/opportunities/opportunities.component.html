@@ -28,6 +28,9 @@
         </tr>
       </thead>
       <tbody *ngFor="let el of oportunities">
+      <mat-expansion-panel>
+
+        <mat-expansion-panel-header>
         <tr class="box-wrapped" mdbTableCol (click)="showRow(el)"
           [ngClass]="{'no-border': selectedRow && selectedRow.name === el.name}">
           <td class="light">{{el.name}}</td>
@@ -43,6 +46,8 @@
             <p class="light">en {{el.days}} dias</p>
           </td>
         </tr>
+      </mat-expansion-panel-header>
+      <ng-template matExpansionPanelContent>
         <tr mdbTableCol class="expanded-row" [ngClass]="{'hidden': !selectedRow || selectedRow.name !== el.name}">
           <td colspan="6" class="pb-5">
             <div class="d-flex align-items-center flex-column">
@@ -73,6 +78,8 @@
             </div>
           </td>
         </tr>
+        </ng-template>
+      </mat-expansion-panel>
       </tbody>
     </table>
   </div>
