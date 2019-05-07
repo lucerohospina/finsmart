@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 @Component({
   template: `
@@ -49,6 +51,7 @@ export class NgbdModal2Content {
   close() {
     this.modalService.dismissAll();
   }
+  panelOpenState = false;
 }
 @Component({
   selector: 'app-opportunities',
