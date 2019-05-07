@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  closeResult: string;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private modalService: NgbModal) { }
+
+  open(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title',  size: 'sm', centered: true, windowClass: 'loginModal'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    });
+  }
+
 
   ngOnInit() {
   }

@@ -68,6 +68,8 @@ a.active {
 }
 
 .login-buttons {
+  border-bottom: unset !important;
+  flex-wrap: unset !important;
   button:nth-child(1) {
     margin-right: 12px;
   }
@@ -76,6 +78,25 @@ a.active {
   }
   @media (min-width: 1280px){
     justify-content: space-between;
+  }
+}
+
+.loginModal {
+  .modal-content{
+    height: 350px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .modal-body {
+      flex: inherit;
+      h2 {
+        font-weight: 700;
+        margin-bottom: 2rem;
+      }
+      button {
+        margin: 2rem auto 0;
+      }
+    }
   }
 }
 
