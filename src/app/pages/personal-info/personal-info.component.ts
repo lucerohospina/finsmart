@@ -1,5 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {MatSnackBar} from '@angular/material';
+
+@Component({
+  selector: 'app-snack-bar',
+  templateUrl: './snackbar.html',
+  styles: [`
+    .example-pizza-party {
+      color: hotpink;
+    }
+  `],
+})
+export class SnackBarComponent {}
 
 @Component({
   selector: 'app-personal-info',
@@ -8,12 +20,17 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 })
 export class PersonalInfoComponent implements OnInit {
   closeResult: string;
-
-  constructor(private modalService: NgbModal) { }
+  durationInSeconds = 5;
+  constructor(private modalService: NgbModal, private snackBar: MatSnackBar) { }
 
   open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title',  size: 'sm', centered: true, windowClass: 'loginModal'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
+    });
+  }
+  openSnackBar( action: string) {
+    this.snackBar.open('Los cambios fueron guardados', action, {
+      duration: 2000,
     });
   }
 

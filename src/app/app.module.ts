@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -14,7 +15,7 @@ import { InvestmentsComponent } from './pages/investments/investments.component'
 import { BankAccountsComponent } from './pages/bank-accounts/bank-accounts.component';
 import { DepositsComponent } from './pages/deposits/deposits.component';
 import { NavbarMobileComponent } from './commons/navbar-mobile/navbar-mobile.component';
-import { PersonalInfoComponent } from './pages/personal-info/personal-info.component';
+import { PersonalInfoComponent, SnackBarComponent } from './pages/personal-info/personal-info.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -44,16 +45,19 @@ const routes: Routes = [
     BankAccountsComponent,
     DepositsComponent,
     NavbarMobileComponent,
-    PersonalInfoComponent
+    PersonalInfoComponent,
+    SnackBarComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [NgbdModal1Content, NgbdModal2Content]
+  entryComponents: [NgbdModal1Content, NgbdModal2Content, SnackBarComponent]
 })
 export class AppModule { }
