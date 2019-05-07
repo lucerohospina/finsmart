@@ -1,5 +1,5 @@
 <div class="main-container">
-  <div class="main-table mt-5">
+  <div class="main-table mt-5" style="width: 90%">
     <table mdbTable>
       <thead>
         <tr>
@@ -7,7 +7,9 @@
           <th scope="col">Cuenta</th>
           <th scope="col">CCI</th>
           <th scope="col">Moneda</th>
-          <th scope="col" colspan="3">Fecha de Registro</th>
+          <th scope="col">Fecha de Registro</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -20,11 +22,41 @@
           <td class="light"><span class="icon-edit"></span></td>
           <td class="light"><span class="icon-garbage"></span></td>
         </tr>
+        <tr [ngClass]="{'hideTable': !show}">
+          <td>
+            <select id="inputState" class="form-control" id="newAttributeName" [(ngModel)]="newAttribute.bank" name="newAttributeName">
+              <option selected>BBVA Dólares</option>
+              <option>BCP Dólares</option>
+              <option>IBK Dólares</option>
+            </select>
+          </td>
+          <td>
+              <input class="form-control" placeholder="N de Cuenta" type="text" id="newAttributeCode" [(ngModel)]="newAttribute.account" name="newAttributeCode" />
+          </td>
+          <td>
+              <input class="form-control" placeholder="N de CCi" type="text" id="newAttributePrice" [(ngModel)]="newAttribute.cci" name="newAttributePrice" />
+          </td>
+          <td>
+            <select id="inputState" class="form-control" id="newAttributeName" [(ngModel)]="newAttribute.currency" name="newAttributeCurrency">
+              <option selected>USD</option>
+              <option>PEN</option>
+            </select>
+          </td>
+          <td>
+            <button class="bg-electric-blue main-button-radius" type="button" (click)="addFieldValue()">Guardar</button> 
+          </td>
+          <td>
+              <span (click)="hideAdd()" class="icon-cancel close-tab"></span>
+          </td>
+          <td>
+          
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
   <div class="mt-5">
-    <figure class="text-center mb-4" style="width: 30px">
+    <figure class="text-center mb-4" style="width: 30px" (click)="showAdd()">
       <img src="./assets/img/plus.svg" alt="logo" class="img-fluid logo">
     </figure>
   </div>

@@ -8,6 +8,8 @@ import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class BankAccountsComponent implements OnInit {
 
+  private newAttribute: any = {};
+
   bankAccounts = [
     {
       bank: 'BBVA Continental',
@@ -35,6 +37,8 @@ export class BankAccountsComponent implements OnInit {
   showNavigationArrows = true;
   showNavigationIndicators = false;
 
+  show = false;
+
   constructor(config: NgbCarouselConfig) {
     config.showNavigationArrows = true;
     config.interval = 0;
@@ -42,6 +46,21 @@ export class BankAccountsComponent implements OnInit {
     config.wrap = true;
     config.keyboard = false;
     config.pauseOnHover = true;
+  }
+
+  showAdd() {
+    this.show = true;
+  }
+
+  hideAdd() {
+    this.show = false;
+  }
+
+  addFieldValue() {
+    this.bankAccounts.push({
+      date: '04/feb/2019',
+      ...this.newAttribute});
+    this.newAttribute = {};
   }
 
   ngOnInit() {
