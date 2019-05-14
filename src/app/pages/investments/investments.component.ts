@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import * as $ from 'jquery';
+import { log } from 'util';
 
 @Component({
   selector: 'app-investments',
@@ -162,6 +164,7 @@ export class InvestmentsComponent implements OnInit {
 
   showNavigationArrows = true;
   showNavigationIndicators = false;
+  show = 1;
   
   constructor(config: NgbCarouselConfig) {
     config.showNavigationArrows = true;
@@ -173,6 +176,13 @@ export class InvestmentsComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
+
+  onChange(n){
+    this.show = parseInt(n); 
+  }
+
+  
 
 }

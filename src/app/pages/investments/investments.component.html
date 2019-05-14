@@ -133,9 +133,17 @@
       </li>
     </ul>
   </div>
+  <div class='d-flex align-items-center justify-content-between'>
+      <select class="custom-select" (change)="onChange($event.target.value)">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+    </div>
    
   <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="tab-pane fade" [ngClass]="{'show active': show === 1}" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
       <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-bottom"
      [showNavigationIndicators]="showNavigationIndicators" >
      <ng-template ngbSlide *ngFor="let item of oportunities">
@@ -178,13 +186,13 @@
      </ng-template>
    </ngb-carousel>
     </div>
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div class="tab-pane fade" [ngClass]="{'show active': show === 2}" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
       <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-bottom"
      [showNavigationIndicators]="showNavigationIndicators" >
      <ng-template ngbSlide *ngFor="let item of oportunities">
        <div class="carousel-caption">
          <div class="d-flex justify-content-around first-part">
-            <p>Pagador</p> <p>{{item.name}}</p>
+            <p>Pagador2</p> <p>{{item.name}}</p>
          </div>
          <hr class='mx-4 mt-0 mb-4'>
          <div class="d-flex justify-content-around second-part pt-2">
@@ -221,13 +229,13 @@
      </ng-template>
    </ngb-carousel>
     </div>
-    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+    <div class="tab-pane fade" [ngClass]="{'show active': show === 3}" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
       <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-bottom"
      [showNavigationIndicators]="showNavigationIndicators" >
      <ng-template ngbSlide *ngFor="let item of oportunities">
        <div class="carousel-caption">
          <div class="d-flex justify-content-around first-part">
-            <p>Pagador</p> <p>{{item.name}}</p>
+            <p>Pagador3</p> <p>{{item.name}}</p>
          </div>
          <hr class='mx-4 mt-0 mb-4'>
          <div class="d-flex justify-content-around second-part pt-2">
