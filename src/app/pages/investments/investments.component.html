@@ -82,28 +82,24 @@
         <table mdbTable>
             <thead>
               <tr>
-                <th scope="col">Pagador</th>
-                <th scope="col">Monto Total</th>
-                <th scope="col-2">Monto Disponible</th>
-                <th scope="col">TEA</th>
-                <th scope="col">ROI (monto)</th>
-                <th scope="col">Fecha de cobro (días)</th>
+                <th scope="col">Banco</th>
+                <th scope="col">Número de Cuenta</th>
+                <th scope="col-2">Divisa</th>
+                <th scope="col">Monto</th>
+                <th scope="col">Fecha de Transferencia</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Tipo</th>
               </tr>
             </thead>
             <tbody>
               <tr class="box-wrapped" mdbTableCol *ngFor="let el of oportunities3">
-                <td class="light">{{el.name}}</td>
-                <td class="light">{{el.ammount}}</td>
-                <td class="light">{{el.availableAmmount}}</td>
-                <td class="light">{{el.tea}}</td>
-                <td>
-                  <p class="light mb-0">{{el.roi}}</p>
-                  <p class="light mb-0">{{el.roiAmmount}}</p>
-                </td>
-                <td>
-                  <p class="light mb-0">{{el.date}}</p>
-                  <p class="light mb-0">en {{el.days}} dias</p>
-                </td>
+                <td class="light">{{el.bank}}</td>
+                <td class="light">{{el.accountNumber}}</td>
+                <td class="light">{{el.badge}}</td>
+                <td class="light">{{el.amount}}</td>
+                <td class="light">{{el.transferDate}}</td>
+                <td class="light">{{el.state}}</td>
+                <td class="light">{{el.tipe}}</td>
               </tr>
             </tbody>
             
@@ -125,8 +121,22 @@
  <div>
   <div class='d-flex align-items-center justify-content-between'>
     <p class="title d-inline mb-0">Inversiones actuales</p> <span class='icon-down-arrow'></span>
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+      </li>
+    </ul>
   </div>
-   <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-bottom"
+   
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+      <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-bottom"
      [showNavigationIndicators]="showNavigationIndicators" >
      <ng-template ngbSlide *ngFor="let item of oportunities">
        <div class="carousel-caption">
@@ -167,5 +177,93 @@
        </div>
      </ng-template>
    </ngb-carousel>
+    </div>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-bottom"
+     [showNavigationIndicators]="showNavigationIndicators" >
+     <ng-template ngbSlide *ngFor="let item of oportunities">
+       <div class="carousel-caption">
+         <div class="d-flex justify-content-around first-part">
+            <p>Pagador</p> <p>{{item.name}}</p>
+         </div>
+         <hr class='mx-4 mt-0 mb-4'>
+         <div class="d-flex justify-content-around second-part pt-2">
+            <div>
+              <p>Monto total</p>
+              <p>{{item.ammount}}</p>
+            </div>
+            <div>
+              <p>Monto disponible</p>
+              <p>{{item.availableAmmount}}</p>
+            </div>
+         </div>
+         <hr class='mx-5 mt-0'>
+         <div class="d-flex justify-content-around third-part mr-4 ml-3">
+            <div>
+              <p>TEA</p>
+              <p>{{item.tea}}</p>
+            </div>
+            <hr class='mx-2'>
+            <div>
+              <p class='mx-2'>ROI (monto)</p>
+              <p class='mb-0'>{{item.roi}}</p>
+              <p>{{item.roiAmmount}}</p>
+            </div>
+            <hr class='mx-2'>
+            <div>
+                <p class='mx-2'>Fecha de cobro (días)</p>
+                <p class='mb-0'>{{item.date}}</p>
+                <p>({{item.days}}) días</p>
+            </div>
+         </div>
+         
+       </div>
+     </ng-template>
+   </ngb-carousel>
+    </div>
+    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+      <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-bottom"
+     [showNavigationIndicators]="showNavigationIndicators" >
+     <ng-template ngbSlide *ngFor="let item of oportunities">
+       <div class="carousel-caption">
+         <div class="d-flex justify-content-around first-part">
+            <p>Pagador</p> <p>{{item.name}}</p>
+         </div>
+         <hr class='mx-4 mt-0 mb-4'>
+         <div class="d-flex justify-content-around second-part pt-2">
+            <div>
+              <p>Monto total</p>
+              <p>{{item.ammount}}</p>
+            </div>
+            <div>
+              <p>Monto disponible</p>
+              <p>{{item.availableAmmount}}</p>
+            </div>
+         </div>
+         <hr class='mx-5 mt-0'>
+         <div class="d-flex justify-content-around third-part mr-4 ml-3">
+            <div>
+              <p>TEA</p>
+              <p>{{item.tea}}</p>
+            </div>
+            <hr class='mx-2'>
+            <div>
+              <p class='mx-2'>ROI (monto)</p>
+              <p class='mb-0'>{{item.roi}}</p>
+              <p>{{item.roiAmmount}}</p>
+            </div>
+            <hr class='mx-2'>
+            <div>
+                <p class='mx-2'>Fecha de cobro (días)</p>
+                <p class='mb-0'>{{item.date}}</p>
+                <p>({{item.days}}) días</p>
+            </div>
+         </div>
+         
+       </div>
+     </ng-template>
+   </ngb-carousel>
+    </div>
+  </div>
  </div>
 </div>
