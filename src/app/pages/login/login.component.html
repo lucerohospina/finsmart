@@ -49,14 +49,20 @@
 
 <ng-template #content let-modal>
   <div class="modal-body">
-    <h2>Recuperar contraseña</h2>
-    <form>
-      <div class="form-group">
-        <div class="input-group">
-          <input id="password" class="form-control" placeholder="Email" name="dp">
+    <span (click)="modal.dismiss('Cross click')" class="icon-cancel close-tab"></span>
+    <div *ngIf="!passwordChange">
+      <h2>Recuperar contraseña</h2>
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+            <input id="password" class="form-control" placeholder="Email" name="dp">
+          </div>
         </div>
-      </div>
-    </form>
-    <button type="submit" class="bg-electric-blue main-button-radius">Recuperar contraseña</button>
+      </form>
+      <button type="submit" (click)="changePassword()" class="bg-electric-blue main-button-radius">Recuperar contraseña</button>
+    </div>
+    <div *ngIf="passwordChange">
+      <p class="mt-5">La contraseña se ha modificado correctamente</p>
+    </div>
   </div>
 </ng-template>

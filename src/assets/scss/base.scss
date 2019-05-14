@@ -55,12 +55,19 @@ a.active {
   width: calc(100% - 32px);
   margin: 20px auto;
   form {
-    width: 250px;
+    width: calc(100% - 32px);
     margin: 0 auto;
   }
+  img {
+    max-width: 100%;
+  }
   @media (min-width: 768px) {
+    width: calc(100% - 64px);
     .img-container {
-      width: 40%;
+      display: none;
+    }
+    form {
+      width: calc(100% - 64px);
     }
   }
   @media (min-width: 1280px) {
@@ -69,6 +76,7 @@ a.active {
     height: 100vh;
     justify-content: space-evenly;
     .img-container {
+      display: flex;
       width: 40%;
       .login-image {
         width: 95%;
@@ -84,6 +92,7 @@ a.active {
 .login-buttons {
   border-bottom: unset !important;
   flex-wrap: unset !important;
+  justify-content: center;
   button:nth-child(1) {
     margin-right: 12px;
   }
@@ -96,16 +105,41 @@ a.active {
 }
 
 .loginModal {
+  .modal-dialog {
+    @media (min-width: 768px) {
+      max-width: 570px !important;
+    }
+    @media (min-width: 1280px) {
+      max-width: 768px !important;
+    }
+  }
   .modal-content{
-    height: 350px !important;
+    height: 80vh !important;
+    @media (min-width: 768px) {
+      height: 350px !important;
+    }
     display: flex;
     align-items: center;
     justify-content: center;
     .modal-body {
+      height: 100%;
+      width: 100%;
+      padding: 5rem 1rem 1rem;
       flex: inherit;
+      .icon-cancel {
+        position: absolute;
+        cursor: pointer;
+        top: 18px;
+        right: 18px;
+      }
       h2 {
         font-weight: 700;
         margin-bottom: 2rem;
+        text-align: center;
+      }
+      input {
+        max-width: 300px;
+        margin: 0 auto;
       }
       button {
         margin: 2rem auto 0;

@@ -9,6 +9,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class LoginComponent implements OnInit {
   closeResult: string;
+  passwordChange = false;
 
   constructor(private router:Router, private modalService: NgbModal) { }
 
@@ -18,6 +19,9 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  changePassword() {
+    this.passwordChange = true;
+  }
 
   ngOnInit() {
   }
