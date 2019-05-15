@@ -231,6 +231,7 @@ a.active {
     padding: 0px 0 45px 55px;
     height: 100vh;
     position: fixed;
+    overflow-y: scroll;
     width: 280px;
   }
   li {
@@ -246,7 +247,7 @@ a.active {
 }
 
 .title-sidebar {
-  padding: 15px 0;
+  padding: 10px 0;
   margin: 13px 0;
   position: relative;
   cursor: pointer;
@@ -642,6 +643,40 @@ a.active {
 
 // OPORTUNITIES mobile
 
+
+.oportuntieMobileModal {
+  font-size: 13px !important;
+  .icon-cancel {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .modal-dialog {
+    max-width: unset! important;
+    span {
+      font-size: 13px !important;
+    }
+    .mainText {
+      font-size: 13px !important;
+      display: block;
+      margin-top: 20px;
+      &.bold {
+        margin-top: 10px;
+        font-weight: 700;
+      }
+    }
+    .primary {
+      color: #09f;
+    }
+    .ammount {
+      justify-content: space-between;
+      input {
+        border: 1px solid #cacaca;
+      }
+    }
+  }
+}
+
 /*-----------BANK ACCOUNTS-----------*/
 
 .bank-accounts-mobile {
@@ -660,6 +695,17 @@ a.active {
   span.icon-plus {
       font-size: 23px;
     }
+}
+
+.bankModal {
+  .modal-dialog {
+    max-width: unset;
+  }
+  .icon-cancel {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
 }
 
 /*------------INVESTMENTS--------------*/

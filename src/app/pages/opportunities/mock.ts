@@ -1,5 +1,6 @@
 export const ELEMENT_DATA = [
   {
+    id: 1,
     name: 'PC TEXTIL EIRL',
     ammount: 'S/ 14,889,95',
     availableAmmount: 'S/ 10,000,00',
@@ -9,7 +10,7 @@ export const ELEMENT_DATA = [
     date: '04/feb/2019',
     days: 45,
     child: {
-      text: 'PC TEXTIL EIRL (RUC 20131379944) es una empresa dedicada a la elaboración de prendas para empleados, colaboradores, técnicos y auxiliares. Tiene una facturación promedio de XX millones de soles.',
+      text: 'PCAA TEXTIL EIRL (RUC 20131379944) es una empresa dedicada a la elaboración de prendas para empleados, colaboradores, técnicos y auxiliares. Tiene una facturación promedio de XX millones de soles.',
       mainText: '5 (100%) de las facturas has sido cobradas exitosamente.',
       ammount: '(cuentas con S/15,456.00 y $0.00 disponibles)',
       roi: '+ S/318.75',
@@ -17,6 +18,7 @@ export const ELEMENT_DATA = [
     }
   },
   {
+    id: 2,
     name: 'RS IMPORT EXPORT SAC',
     ammount: 'S/ 14,889,95',
     availableAmmount: 'S/ 10,000,00',
@@ -34,6 +36,7 @@ export const ELEMENT_DATA = [
     }
   },
   {
+    id: 3,
     name: 'RS IMPORT EXPORT SC',
     ammount: 'S/ 14,889,95',
     availableAmmount: 'S/ 10,000,00',
@@ -43,7 +46,7 @@ export const ELEMENT_DATA = [
     date: '04/feb/2019',
     days: 45,
     child: {
-      text: 'PC TEXTIL EIRL (RUC 20131379944) es una empresa dedicada a la elaboración de prendas para empleados, colaboradores, técnicos y auxiliares. Tiene una facturación promedio de XX millones de soles.',
+      text: 'PCDD TEXTIL EIRL (RUC 20131379944) es una empresa dedicada a la elaboración de prendas para empleados, colaboradores, técnicos y auxiliares. Tiene una facturación promedio de XX millones de soles.',
       mainText: '5 (100%) de las facturas has sido cobradas exitosamente.',
       ammount: '(cuentas con S/15,456.00 y $0.00 disponibles)',
       roi: '+ S/318.75',
