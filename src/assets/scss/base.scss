@@ -639,6 +639,7 @@ a.active {
 
 // OPORTUNITIES mobile
 
+
 .oportuntieMobileModal {
   font-size: 13px !important;
   .icon-cancel {
@@ -690,6 +691,17 @@ a.active {
   span.icon-plus {
       font-size: 23px;
     }
+}
+
+.bankModal {
+  .modal-dialog {
+    max-width: unset;
+  }
+  .icon-cancel {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
 }
 
 /*------------INVESTMENTS--------------*/
