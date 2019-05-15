@@ -13,7 +13,7 @@ body, html {
   }
 }
 
-/*--------- INPUT TIPE NUMBER -----------*/
+/*--------- INPUT TyPE NUMBER -----------*/
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
@@ -109,7 +109,7 @@ a.active {
     width: calc(calc(100% - 12px) /2)
   }
   @media (min-width: 1280px){
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 
@@ -721,6 +721,12 @@ select::-ms-expand {
   form {
     margin-top: 10px;
   }
+  .container {
+    p{
+      font-style: italic;
+      color: #696b6d;
+    }
+  }
   @media (min-width: 768px) {
     margin: 0px;
     form {
@@ -741,10 +747,16 @@ select::-ms-expand {
   width: 100%;
   text-align: center;
     .single-box{
-      border: 1.5px solid $electric-blue;
+      border: 1.5px solid $gray-2;
       border-radius: 10px;
-      width: 200px;
-      padding: 10px;
+      width: 350px;
+      padding: 30px;
+      @media (min-width: 768px) {
+        border: 1.5px solid $electric-blue;
+        border-radius: 10px;
+        width: 550px;
+        padding: 30px;
+      }
     }
 }
 

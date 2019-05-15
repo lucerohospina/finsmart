@@ -2,10 +2,23 @@
   <div class='deposit-container'>
     <div class="d-flex w-90">
         <div class="deposit-box">
-          <p class="fs-14">Monto disponible</p>
           <div class="single-box">
-            <p class="mb-1">s/ 5,000.00</p>
-            <p class="mb-0">$ 4,452.87</p>
+              <div>
+                  <strong>Cuentas Finsmart</strong>
+                  <p>Finsmart S.A.C.| ruc: 20603506180</p>
+                </div>
+                <form>
+                    <div class="form-group row">
+                      <label for="staticEmail" class="col-2 col-form-label">Banco</label>
+                      <div class="col-10">
+                          <select id="inputState" class="form-control">
+                              <option selected>BBVA Soles</option>
+                              <option>BCP Dólares</option>
+                              <option>IBK Dólares</option>
+                            </select>
+                      </div>
+                    </div>
+                </form>
           </div>
         </div>
       </div>
@@ -15,14 +28,15 @@
           
           <a class="investment-button mx-2" id="retirar-tab" href="#retirar" data-toggle="tab" role="tab" aria-controls="retirar" aria-selected="true">Retirar</a>
         </div>
+        <p>Monto disponible en tu cuenta: S/ 5,000.00 y $ 4,452.87</p>
       </div>
 
       <div class="tab-content">
-        <div class="tab-pane fade show active" id="depositar" role="tabpanel" aria-labelledby="depositar-tab">
+        <div class="tab-pane fade show active text-center" id="depositar" role="tabpanel" aria-labelledby="depositar-tab">
           <form>
             <div class="form-group row">
               <label for="staticEmail" class="col-sm-2 col-form-label">Cuenta</label>
-              <div class="col-sm-10">
+              <div class="col-sm-10 col-12">
                   <select id="inputState" class="form-control">
                       <option selected>BBVA Dólares 001-5768414-12</option>
                       <option>BCP Dólares 001-5768414-12</option>
@@ -32,7 +46,7 @@
             </div>
             <div class="form-group row">
               <label for="inputPassword" class="col-sm-2 col-form-label">Monto</label>
-              <div class="col-sm-5">
+              <div class="col-sm-5 col-6 offset-sm-0 offset-3">
                 <input type="password" class="form-control" id="inputPassword" placeholder="000.00">
               </div>
             </div>

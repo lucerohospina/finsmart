@@ -158,7 +158,7 @@ export class InvestmentsComponent implements OnInit {
       amount: 12000,
       transferDate: '04/mar/2019',
       state: 'Aprobado',
-      tipe: 'Retiro',
+      type: 'Retiro',
     }
   ];
 
