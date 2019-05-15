@@ -123,7 +123,7 @@ a.active {
     }
   }
   .modal-content{
-    height: 80vh !important;
+    height: 60vh !important;
     @media (min-width: 768px) {
       height: 350px !important;
     }
@@ -592,11 +592,14 @@ a.active {
 
 .modal-dialog {
   position: relative;
-    max-width: 55%;
+    max-width: 95%;
     height: 65%;
     pointer-events: none;
     display: flex;
     justify-content: center;
+    @media (min-width: 768px) {
+      max-width: 55%;
+    }
     .modal-content {
       height: 75%;
       .modal-body {

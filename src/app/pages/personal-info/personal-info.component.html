@@ -62,6 +62,7 @@
 
 <ng-template #content let-modal>
     <div class="modal-body">
+      <span (click)="modal.dismiss('Cross click')" class="icon-cancel close-tab"></span>
       <h2>Recuperar contraseña</h2>
       <form>
         <div class="form-group">

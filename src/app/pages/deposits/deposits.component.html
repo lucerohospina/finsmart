@@ -35,9 +35,9 @@
       </div>
       <div class="container">
         <div class="text-center mb-4 mt-5 d-flex login-buttons nav nav-tabs" role="tablist">
-          <a class="investment-button active mx-2" id="depositar-tab" href="#depositar" data-toggle="tab" role="tab" aria-controls="depositar" aria-selected="true">Depositar</a>
+          <a class="deposit-button active mx-2" id="depositar-tab" href="#depositar" data-toggle="tab" role="tab" aria-controls="depositar" aria-selected="true">Depositar</a>
           
-          <a class="investment-button mx-2" id="retirar-tab" href="#retirar" data-toggle="tab" role="tab" aria-controls="retirar" aria-selected="true">Retirar</a>
+          <a class="deposit-button mx-2" id="retirar-tab" href="#retirar" data-toggle="tab" role="tab" aria-controls="retirar" aria-selected="true">Retirar</a>
         </div>
         <p class="text-center">Monto disponible en tu cuenta: S/ 5,000.00 y $ 4,452.87</p>
       </div>
@@ -98,6 +98,7 @@
 
   <ng-template #content let-modal>
       <div class="modal-body text-center">
+        <span (click)="modal.dismiss('Cross click')" class="icon-cancel close-tab"></span>
         <h2>Adjuntar archivo</h2>
         <form>
           <div class="form-group">
