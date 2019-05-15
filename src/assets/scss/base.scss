@@ -635,6 +635,36 @@ a.active {
 
 // OPORTUNITIES mobile
 
+.oportuntieMobileModal {
+  font-size: 13px;
+  .icon-cancel {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .modal-dialog {
+    max-width: unset! important;
+    .mainText {
+      font-size: 13px;
+      display: block;
+      margin-top: 20px;
+      &.bold {
+        margin-top: 10px;
+        font-weight: 700;
+      }
+    }
+    .primary {
+      color: #09f;
+    }
+    .ammount {
+      justify-content: space-between;
+      input {
+        border: 1px solid #cacaca;
+      }
+    }
+  }
+}
+
 /*-----------BANK ACCOUNTS-----------*/
 
 .bank-accounts-mobile {

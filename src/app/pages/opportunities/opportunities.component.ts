@@ -91,8 +91,9 @@ export class OpportunitiesComponent implements OnInit {
 
   showNavigationArrows = true;
   showNavigationIndicators = false;
+  currentItemMobile = {};
 
-
+  modalSteps = 1;
 
   constructor(private modalService: NgbModal, config: NgbCarouselConfig) {
     config.showNavigationArrows = true;
@@ -105,6 +106,17 @@ export class OpportunitiesComponent implements OnInit {
 
   open() {
     this.modalService.open(NgbdModal1Content, { centered: true, backdropClass: 'light-backdrop1'});
+  }
+
+  openMobile(content, id) {
+    this.currentItemMobile = ELEMENT_DATA.find(c => c.id === id).child;
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title',  size: 'sm', centered: true, windowClass: 'oportuntieMobileModal'})
+      .result.then((result) => {
+    });
+  }
+
+  changeModalStep(num) {
+    this.modalSteps = num;
   }
 
   dismissAll() {
