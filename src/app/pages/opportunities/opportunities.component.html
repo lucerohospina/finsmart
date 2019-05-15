@@ -110,7 +110,7 @@
    <p class="title">Oportunidades</p>
    <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-bottom"
      [showNavigationIndicators]="showNavigationIndicators" >
-     <ng-template ngbSlide *ngFor="let item of oportunities">
+     <ng-template ngbSlide *ngFor="let item of dataSource">
        <div class="carousel-caption">
          <div class="d-flex justify-content-around first-part">
             <p>Pagador</p> <p>{{item.name}}</p>
