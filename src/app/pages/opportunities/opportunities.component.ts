@@ -39,7 +39,10 @@ export class NgbdModal1Content {
       </button>
     </div>
     <div class="modal-body second-modal text-center">
-      <p><b>¡Inversión exitosa!</b></p>
+      <p><b>¡Inversión exitosa!</b><br>
+      <span>La inversión se llevará a cabo cuando la factura se financie completamente.
+      Recibirás un e-mail de confirmación cuando suceda</span>
+      </p>
     </div>
   </div>
   `
