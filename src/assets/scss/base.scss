@@ -672,6 +672,39 @@ a.active {
   opacity: 0;
   transition: visibility 0s 1s, opacity 1s linear;
 }
+.select-investment{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  max-width: 400px;
+  font-size: 20px;
+  line-height: 1.75;
+  color: #212529;
+  background-color: #ffffff00;
+  background-image: none;
+  border: 1px solid #fff;
+  -ms-word-break: normal;
+  word-break: normal;
+  z-index: 10;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select-content span{
+  position: absolute;
+  right: 27px;
+  z-index: 5;
+}
+
+
+.select-investment:focus {
+  border-color: #ffffff !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
 /*------------DEPOSIT--------------*/
 
 .deposit-container {

@@ -119,31 +119,17 @@
    </ng-template>
  </ngb-carousel>
  <div>
-  <div class='d-flex align-items-center justify-content-between'>
-    <p class="title d-inline mb-0">Inversiones actuales</p> <span class='icon-down-arrow'></span>
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
-      </li>
-    </ul>
-  </div>
-  <div class='d-flex align-items-center justify-content-between'>
-      <select class="custom-select" (change)="onChange($event.target.value)">
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+  <div class='d-flex align-items-center justify-content-between select-content'>
+      <span class='icon-down-arrow'></span>
+      <select class=" select-investment" (change)="onChange($event.target.value)">
+          <option selected value="1">Inversiones actuales</option>
+          <option value="2">Historial de Inversión</option>
+          <option value="3">Historial de Transferencias</option>
         </select>
     </div>
    
   <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade" [ngClass]="{'show active visible-card': show === 1, 'hidden-card': show !== 1}" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="tab-pane fade" [ngClass]="{'show active': show === 1}" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
       <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-bottom"
      [showNavigationIndicators]="showNavigationIndicators" >
      <ng-template ngbSlide *ngFor="let item of oportunities">
@@ -186,10 +172,10 @@
      </ng-template>
    </ngb-carousel>
     </div>
-    <div class="tab-pane fade" [ngClass]="{'show active visible-card': show === 2, 'hidden-card': show !== 2}" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div class="tab-pane fade" [ngClass]="{'show active': show === 2}" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
       <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-bottom"
      [showNavigationIndicators]="showNavigationIndicators" >
-     <ng-template ngbSlide *ngFor="let item of oportunities">
+     <ng-template ngbSlide *ngFor="let item of oportunities2">
        <div class="carousel-caption">
          <div class="d-flex justify-content-around first-part">
             <p>Pagador2</p> <p>{{item.name}}</p>
@@ -229,42 +215,44 @@
      </ng-template>
    </ngb-carousel>
     </div>
-    <div class="tab-pane fade" [ngClass]="{'show active visible-card': show === 3, 'hidden-card': show !== 3}" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+    <div class="tab-pane fade" [ngClass]="{'show active': show === 3}" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
       <ngb-carousel [showNavigationArrows]="showNavigationArrows" class="carousel-content carousel-bottom"
      [showNavigationIndicators]="showNavigationIndicators" >
-     <ng-template ngbSlide *ngFor="let item of oportunities">
+     <ng-template ngbSlide *ngFor="let item of oportunities3">
        <div class="carousel-caption">
          <div class="d-flex justify-content-around first-part">
-            <p>Pagador3</p> <p>{{item.name}}</p>
+            <p>Banco</p> <p>{{item.bank}}</p>
+         </div>
+         <hr class='mx-4 mt-0 mb-4'>
+         <div class="d-flex justify-content-around first-part">
+            <p>Número de cuenta</p> <p>{{item.accountNumber}}</p>
          </div>
          <hr class='mx-4 mt-0 mb-4'>
          <div class="d-flex justify-content-around second-part pt-2">
             <div>
-              <p>Monto total</p>
-              <p>{{item.ammount}}</p>
+                <p>Divisa</p>
+                <p>{{item.badge}}</p>
             </div>
             <div>
-              <p>Monto disponible</p>
-              <p>{{item.availableAmmount}}</p>
+              <p>Monto</p>
+              <p>{{item.amount}}</p>
             </div>
          </div>
          <hr class='mx-5 mt-0'>
          <div class="d-flex justify-content-around third-part mr-4 ml-3">
             <div>
-              <p>TEA</p>
-              <p>{{item.tea}}</p>
+              <p>Fecha de Transferencia</p>
+              <p>{{item.transferDate}}</p>
             </div>
             <hr class='mx-2'>
             <div>
-              <p class='mx-2'>ROI (monto)</p>
-              <p class='mb-0'>{{item.roi}}</p>
-              <p>{{item.roiAmmount}}</p>
+              <p class='mx-2'>Estado</p>
+              <p class='mb-0'>{{item.state}}</p>
             </div>
             <hr class='mx-2'>
             <div>
-                <p class='mx-2'>Fecha de cobro (días)</p>
-                <p class='mb-0'>{{item.date}}</p>
-                <p>({{item.days}}) días</p>
+                <p class='mx-2'>Tipo</p>
+                <p class='mb-0'>{{item.tipe}}</p>
             </div>
          </div>
          

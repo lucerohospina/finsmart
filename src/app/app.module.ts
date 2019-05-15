@@ -19,6 +19,8 @@ import { BankAccountsComponent } from './pages/bank-accounts/bank-accounts.compo
 import { DepositsComponent } from './pages/deposits/deposits.component';
 import { NavbarMobileComponent } from './commons/navbar-mobile/navbar-mobile.component';
 import { PersonalInfoComponent, SnackBarComponent } from './pages/personal-info/personal-info.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -52,6 +54,7 @@ const routes: Routes = [
     SnackBarComponent
   ],
   imports: [
+    AngularFontAwesomeModule,
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
