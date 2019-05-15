@@ -312,6 +312,7 @@ a.active {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 20px;
     div.investment-box:nth-child(1) {
       opacity: 0.5;
     }
@@ -615,6 +616,9 @@ a.active {
           color: #626262;
           font-size: 16px;
         }
+        span {
+          font-size: 18px;
+        }
       }
       .second-modal {
         display: flex;
@@ -780,14 +784,39 @@ select::-ms-expand {
       border: 1.5px solid $gray-2;
       border-radius: 10px;
       width: 350px;
-      padding: 30px;
+      padding: 20px;
+      hr {
+        display: block;
+      }
+      label {
+        color: $true-blue;
+      }
+      .single-box-accounts {
+        p:nth-child(1), p:nth-child(4){
+          color: $true-blue;
+        }
+      }
       @media (min-width: 768px) {
         border: 1.5px solid $electric-blue;
         border-radius: 10px;
         width: 550px;
         padding: 30px;
+        hr {
+          display: none;
+        }
+        label {
+          color: #000;
+        }
       }
     }
+}
+
+.deposit-title-mobile{
+  font-size: 20px;
+  text-align: left;
+  margin-left: 25px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 
