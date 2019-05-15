@@ -640,7 +640,7 @@ a.active {
 // OPORTUNITIES mobile
 
 .oportuntieMobileModal {
-  font-size: 13px;
+  font-size: 13px !important;
   .icon-cancel {
     position: absolute;
     right: 10px;
@@ -648,8 +648,11 @@ a.active {
   }
   .modal-dialog {
     max-width: unset! important;
+    span {
+      font-size: 13px !important;
+    }
     .mainText {
-      font-size: 13px;
+      font-size: 13px !important;
       display: block;
       margin-top: 20px;
       &.bold {
