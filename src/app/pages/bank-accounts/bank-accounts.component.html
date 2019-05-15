@@ -14,13 +14,41 @@
       </thead>
       <tbody>
         <tr mdbTableCol *ngFor="let el of bankAccounts">
-          <td class="light">{{el.bank}}</td>
-          <td class="light">{{el.account}}</td>
-          <td class="light">{{el.cci}}</td>
-          <td class="light">{{el.currency}}</td>
-          <td class="light">{{el.date}}</td>
-          <td class="light"><span class="icon-edit"></span></td>
-          <td class="light"><span (click)="delete(el.id)" class="icon-garbage"></span></td>
+          <td class="light" *ngIf="currentItemEdited !== el.id">{{el.bank}}</td>
+          <td *ngIf="edited && currentItemEdited === el.id">
+            <select id="inputState" class="form-control" id="newAttributeName" [(ngModel)]="newAttribute.bank" name="newAttributeName">
+              <option selected>BBVA Continental</option>
+              <option>Scotiabank</option>
+              <option>BCP</option>
+              <option>Interbank Dolares</option>
+              <option>Interbank Soles</option>
+            </select>
+          </td>
+          <td class="light" *ngIf="currentItemEdited !== el.id">{{el.account}}</td>
+          <td *ngIf="edited && currentItemEdited === el.id">
+              <input class="form-control" placeholder="N de Cuenta" type="text" id="newAttributeCode" [(ngModel)]="newAttribute.account" name="newAttributeCode" />
+          </td>
+          <td class="light" *ngIf="currentItemEdited !== el.id">{{el.cci}}</td>
+          <td *ngIf="edited && currentItemEdited === el.id">
+              <input class="form-control" placeholder="N de CCi" type="text" id="newAttributePrice" [(ngModel)]="newAttribute.cci" name="newAttributePrice" />
+          </td>
+          <td class="light" *ngIf="currentItemEdited !== el.id">{{el.currency}}</td>
+          <td *ngIf="edited && currentItemEdited === el.id">
+            <select id="inputState" class="form-control" id="newAttributeName" [(ngModel)]="newAttribute.currency" name="newAttributeCurrency">
+              <option selected>USD</option>
+              <option>PEN</option>
+            </select>
+          </td>
+          <td class="light" *ngIf="currentItemEdited !== el.id">{{el.date}}</td>
+          <td class="light" *ngIf="edited && currentItemEdited === el.id">
+              <button class="bg-electric-blue main-button-radius" type="button" (click)="editAccount(el.id)">Editar</button>
+          </td>
+          <td class="light" *ngIf="currentItemEdited !== el.id"><span (click)="openEdit(content, el.id)" class="icon-edit"></span></td>
+          <td *ngIf="edited && currentItemEdited === el.id">
+              <span (click)="hideMobileEdit()" class="icon-cancel close-tab"></span>
+          </td>
+          <td *ngIf="currentItemEdited !== el.id" class="light"><span (click)="delete(el.id)" class="icon-garbage"></span></td>
+          <td *ngIf="edited && currentItemEdited === el.id"></td>
         </tr>
         <tr [ngClass]="{'hideTable': !show}">
           <td>
@@ -100,13 +128,13 @@
             </div>
          </div>
          <div class="d-flex justify-content-center second-part pt-2">
-            <span class='icon-edit'></span>
+            <span (click)="openEdit(content, item.id)" class='icon-edit'></span>
             <span (click)="delete(item.id)" class='icon-garbage'></span>
          </div>
        </div>
      </ng-template>
    </ngb-carousel>
-   <div _ngcontent-c4="" class="mt-2 d-flex justify-content-center">
+   <div _ngcontent-c4="" class="mt-2 d-flex justify-content-center mb-5">
       <!-- <figure _ngcontent-c4="" style="width: 26px">
         <img _ngcontent-c4="" alt="logo" class="img-fluid logo" src="./assets/img/plus.svg">
       </figure> -->
@@ -118,13 +146,16 @@
 <ng-template #content let-modal>
   <div class="modal-body">
     <span (click)="modal.dismiss('Cross click')" class="icon-cancel close-tab"></span>
-    <div class="text-center" *ngIf="!passwordChange">
-      <h3>Agregar cuenta</h3>
+    <div class="text-center">
+      <h3 *ngIf="!edited && currentItemEdited !== el.id">Agregar cuenta</h3>
+      <h3 *ngIf="edited">Editar cuenta</h3>
       <form class="mt-5">
         <select id="inputState" class="form-control" id="newAttributeName" [(ngModel)]="newAttribute.bank" name="newAttributeName">
-          <option selected>BBVA Dólares</option>
-          <option>BCP Dólares</option>
-          <option>IBK Dólares</option>
+          <option selected>BBVA Continental</option>
+          <option>Scotiabank</option>
+          <option>BCP</option>
+          <option>Interbank Dolares</option>
+          <option>Interbank Soles</option>
         </select>
         <div class="mt-3">
           <input class="form-control" placeholder="N de Cuenta" type="text" id="newAttributeCode" [(ngModel)]="newAttribute.account" name="newAttributeCode" />
@@ -136,11 +167,9 @@
         </select>
       </form>
       <div class="d-flex justify-content-center mt-4">
-        <button type="submit" (click)="saveAndClose()" class="bg-electric-blue main-button-radius">Agregar</button>
+        <button *ngIf="!edited && currentItemEdited !== el.id" type="submit" (click)="saveAndClose()" class="bg-electric-blue main-button-radius">Agregar</button>
+        <button *ngIf="edited" type="submit" (click)="editAccount(newAttribute.id)" class="bg-electric-blue main-button-radius">Editar</button>
       </div>  
-    </div>
-    <div *ngIf="passwordChange">
-      <p class="mt-5">La contraseña se ha modificado correctamente</p>
     </div>
   </div>
 </ng-template>

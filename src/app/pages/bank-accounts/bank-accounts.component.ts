@@ -8,7 +8,10 @@ import {NgbCarouselConfig, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 })
 export class BankAccountsComponent implements OnInit {
 
-  private newAttribute: any = {};
+  private newAttribute: any = {
+    bank: 'BCP',
+    currency: 'PEN',
+  };
 
   bankAccounts = [
     {
@@ -41,6 +44,8 @@ export class BankAccountsComponent implements OnInit {
   showNavigationIndicators = false;
   closeResult: string;
   show = false;
+  currentItemEdited: number;
+  edited = false;
 
   constructor(config: NgbCarouselConfig, private modalService: NgbModal) {
     config.showNavigationArrows = true;
@@ -74,6 +79,36 @@ export class BankAccountsComponent implements OnInit {
     const arr = this.bankAccounts.filter(c => c.id !== id);
 
     this.bankAccounts = arr;
+  }
+
+  openEdit(content, id) {
+    this.edited = true;
+    this.currentItemEdited = id;
+    this.newAttribute = this.bankAccounts.find(c => c.id === id);
+    if (window.innerWidth < 768) {
+      this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title',  size: 'sm', centered: true, windowClass: 'bankModal'}).result.then((result) => {
+        this.closeResult = `Closed with: ${result}`;
+      });
+    }
+  }
+
+  editAccount(id) {
+    const arr = this.bankAccounts.filter(c => c.id !== id);
+    this.bankAccounts = [...arr, this.newAttribute];
+    this.edited = false;
+    this.currentItemEdited = null;
+    if (window.innerWidth < 768) {
+      this.modalService.dismissAll();
+    }
+  }
+
+  hideMobileEdit() {
+    this.edited = true;
+    this.currentItemEdited = null;
+    this.newAttribute = {
+      bank: 'BCP',
+      currency: 'PEN',
+    };
   }
 
   addFieldValue() {

@@ -602,7 +602,9 @@ a.active {
       max-width: 55%;
     }
     .modal-content {
-      height: 75%;
+      @media (min-width: 768px) {
+        height: 75%;
+      }
       .modal-body {
         p {
           text-align: center;
