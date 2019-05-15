@@ -231,6 +231,7 @@ a.active {
     padding: 0px 0 45px 55px;
     height: 100vh;
     position: fixed;
+    overflow-y: scroll;
     width: 280px;
   }
   li {
@@ -246,7 +247,7 @@ a.active {
 }
 
 .title-sidebar {
-  padding: 15px 0;
+  padding: 10px 0;
   margin: 13px 0;
   position: relative;
   cursor: pointer;

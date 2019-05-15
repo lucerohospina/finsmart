@@ -39,7 +39,7 @@ export class BankAccountsComponent implements OnInit {
 
   showNavigationArrows = true;
   showNavigationIndicators = false;
-
+  closeResult: string;
   show = false;
 
   constructor(config: NgbCarouselConfig, private modalService: NgbModal) {
