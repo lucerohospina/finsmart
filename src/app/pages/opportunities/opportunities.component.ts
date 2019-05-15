@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import {MatExpansionModule} from '@angular/material/expansion';
-
-
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import { ELEMENT_DATA, COLUMNS } from './mock';
 @Component({
   template: `
   <div id='modal-opportunities'>
@@ -20,8 +20,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
       <p><button class="d-inline bg-electric-blue main-button-radius" (click)="open()">Invertir</button></p>
     </div>
   </div>
-    
-  `
+  `,
 })
 export class NgbdModal1Content {
   constructor(private modalService: NgbModal, public activeModal: NgbActiveModal) { }
@@ -43,25 +42,33 @@ export class NgbdModal1Content {
       <p><b>¡Inversión exitosa!</b></p>
     </div>
   </div>
-    
   `
 })
 export class NgbdModal2Content {
+  panelOpenState = false;
   constructor(private modalService: NgbModal, public activeModal: NgbActiveModal) { }
   close() {
     this.modalService.dismissAll();
   }
-  panelOpenState = false;
 }
 @Component({
   selector: 'app-opportunities',
   templateUrl: './opportunities.component.html',
   styleUrls: ['./opportunities.component.css'],
-  providers: [NgbCarouselConfig]
+  providers: [NgbCarouselConfig],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({height: '0px', minHeight: '0', display: 'none'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 
 export class OpportunitiesComponent implements OnInit {
-
+  dataSource = ELEMENT_DATA;
+  columnsToDisplay = COLUMNS;
+  stringColumns = COLUMNS.map(c => c.slug);
   selectedRow: any = undefined;
 
   singleBenefits = {
@@ -85,63 +92,6 @@ export class OpportunitiesComponent implements OnInit {
   showNavigationArrows = true;
   showNavigationIndicators = false;
 
-
-  oportunities = [
-    {
-      id: 1,
-      name: 'PC TEXTIL EIRL',
-      ammount: 'S/ 14,889,95',
-      availableAmmount: 'S/ 10,000,00',
-      tea: '25.5%',
-      roi: '3,19%',
-      roiAmmount: '(+S/ 318,75)',
-      date: '04/feb/2019',
-      days: 45,
-      child: {
-        text: 'PC TEXTIL EIRL (RUC 20131379944) es una empresa dedicada a la elaboración de prendas para empleados, colaboradores, técnicos y auxiliares. Tiene una facturación promedio de XX millones de soles.',
-        mainText: '5 (100%) de las facturas has sido cobradas exitosamente.',
-        ammount: '(cuentas con S/15,456.00 y $0.00 disponibles)',
-        roi: '+ S/318.75',
-        days: '45',
-      }
-    },
-    {
-      id: 2,
-      name: 'RS IMPORT EXPORT SAC',
-      ammount: 'S/ 14,889,95',
-      availableAmmount: 'S/ 10,000,00',
-      tea: '25.5%',
-      roi: '3,19%',
-      roiAmmount: '(+S/ 318,75)',
-      date: '04/feb/2019',
-      days: 45,
-      child: {
-        text: 'PC TEXTIL EIRL (RUC 20131379944) es una empresa dedicada a la elaboración de prendas para empleados, colaboradores, técnicos y auxiliares. Tiene una facturación promedio de XX millones de soles.',
-        mainText: '5 (100%) de las facturas has sido cobradas exitosamente.',
-        ammount: '(cuentas con S/15,456.00 y $0.00 disponibles)',
-        roi: '+ S/318.75',
-        days: '45',
-      }
-    },
-    {
-      id: 3,
-      name: 'RS IMPORT EXPORT SC',
-      ammount: 'S/ 14,889,95',
-      availableAmmount: 'S/ 10,000,00',
-      tea: '25.5%',
-      roi: '3,19%',
-      roiAmmount: '(+S/ 318,75)',
-      date: '04/feb/2019',
-      days: 45,
-      child: {
-        text: 'PC TEXTIL EIRL (RUC 20131379944) es una empresa dedicada a la elaboración de prendas para empleados, colaboradores, técnicos y auxiliares. Tiene una facturación promedio de XX millones de soles.',
-        mainText: '5 (100%) de las facturas has sido cobradas exitosamente.',
-        ammount: '(cuentas con S/15,456.00 y $0.00 disponibles)',
-        roi: '+ S/318.75',
-        days: '45',
-      }
-    }
-  ];
 
 
   constructor(private modalService: NgbModal, config: NgbCarouselConfig) {
